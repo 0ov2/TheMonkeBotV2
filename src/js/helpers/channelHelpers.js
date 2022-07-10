@@ -19,4 +19,8 @@ const sendMessageToChannel = (client, channelName, message) => {
     }
 }
 
-module.exports = { getDiscordChannelObject, sendMessageToChannel }
+const getListOfServerChannels = (client) => {
+    return client.channels.cache
+}
+
+module.exports = { getDiscordChannelObject, sendMessageToChannel, getListOfServerChannels }
