@@ -1,19 +1,19 @@
 //
-// M O N K E  B O T  V 2
+//     M O N K E  B O T  V 2
 //
 
 //  :packages:
-const discord = require('discord.js');
+const { Client } = require('discord.js');
 require('dotenv').config();
 
 
 
 //  :code:
 const { getDiscordChannelObject, sendMessageToChannel } = require("./js/helpers/channelHelpers.js")
-
+const { createMonkeCommandsbutton } = require("./js/buttons/monke-commands")
 
 //  :statics:
-const client = new discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION", "USER"], intents: ["GUILD_VOICE_STATES"]});
+const client = new Client({ partials: ["MESSAGE", "CHANNEL", "REACTION", "USER"], intents: ["GUILD_VOICE_STATES", "GUILDS", "GUILD_MEMBERS", "GUILD_MESSAGES"]});
 
 
 
@@ -27,9 +27,17 @@ const client = new discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION",
   //  :step 2:
   //  listen for bot online
   client.on("ready", () => {
-    console.log("Monke Bot V2 Ready")
+    //  monke online message
     sendMessageToChannel(client, "monke-bot", "Monke Bot V2 Ready")
+
+
+    //  Set up button commands in monke-commands channel
+    createMonkeCommandsbutton(client)
   })
+
+  //  Initialise CRON jobs
+
+
 
 })()
 
