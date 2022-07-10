@@ -9,8 +9,9 @@ require('dotenv').config();
 
 
 //  :code:
-const { getDiscordChannelObject, sendMessageToChannel } = require("./js/helpers/channelHelpers.js")
-const { createMonkeCommandsbutton } = require("./js/buttons/monke-commands")
+const { sendMessageToChannel } = require("./js/helpers/channelHelpers.js")
+const { createMonkeCommandsbutton } = require("./js/buttons/monke-commands");
+const { handleSlowModeSelectMenuInteration, handleClearSlowModeInteraction } = require('./js/buttons/handler/button-interactions-handler.js');
 
 //  :statics:
 const client = new Client({ partials: ["MESSAGE", "CHANNEL", "REACTION", "USER"], intents: ["GUILD_VOICE_STATES", "GUILDS", "GUILD_MEMBERS", "GUILD_MESSAGES"]});
@@ -38,6 +39,17 @@ const client = new Client({ partials: ["MESSAGE", "CHANNEL", "REACTION", "USER"]
   //  Initialise CRON jobs
 
 
+
+  // Handle Button interations
+  client.on('interactionCreate', interaction => {
+    if (interaction.isSelectMenu()){
+      handleSlowModeSelectMenuInteration(client, interaction)
+    }
+
+    if (interaction.isButton() && interaction.customId === "clear-slow-mode"){
+      handleClearSlowModeInteraction(client, interaction)
+    }
+  })
 
 })()
 

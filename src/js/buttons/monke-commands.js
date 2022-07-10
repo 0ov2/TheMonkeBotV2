@@ -26,14 +26,13 @@ const createMonkeCommandsbutton = async (client) => {
     //  :step 2:
     //  form the options array object from the server channels list
     let serverChannelsOptionsArray = []
-    serverChannelList.map(item => {
-      if(item.type === "GUILD_TEXT"){
-        serverChannelsOptionsArray.push({label: item.name, value: item.name})
+    serverChannelList.map(channel => {
+      if(channel.type === "GUILD_TEXT"){
+        serverChannelsOptionsArray.push({label: channel.name, value: channel.name})
       }
     })
 
 
-    //  :step 3:
     const row = new MessageActionRow()
       .addComponents(
         new MessageSelectMenu()
@@ -42,12 +41,20 @@ const createMonkeCommandsbutton = async (client) => {
           .addOptions(serverChannelsOptionsArray)
       )
 
+    const clearSlowModeButton = new MessageActionRow()
+      .addComponents(
+        new MessageButton()
+          .setCustomId('clear-slow-mode')
+          .setLabel('Clear Slow Mode')
+          .setStyle('PRIMARY')
+      )
+
     const commandEmbed = new MessageEmbed()
         .setColor("ORANGE")
-        .setTitle("Commands")
-        .setDescription("Slow mode - Set the message timeout for a specific channel")
+        .setTitle("Slow Mode")
+        .setDescription("Set a 1 minute slow mode for a specific channel")
     
-        await monkeCommandChannel.send({embeds: [commandEmbed], components: [row]})
+        await monkeCommandChannel.send({embeds: [commandEmbed], components: [row, clearSlowModeButton]}).then(msg => msg.pin())
       }
     
 }
