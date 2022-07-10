@@ -19,6 +19,7 @@ const handleSlowModeSelectMenuInteration = (client, interaction) => {
 
   //  TODO:
   //  Log interaction
+  //  Reset the select menu value to placeholder
 }
 
 

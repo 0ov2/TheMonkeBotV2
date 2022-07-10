@@ -6,8 +6,6 @@
 const { Client } = require('discord.js');
 require('dotenv').config();
 
-
-
 //  :code:
 const { sendMessageToChannel } = require("./js/helpers/channelHelpers.js")
 const { createMonkeCommandsbutton } = require("./js/buttons/monke-commands");
@@ -41,13 +39,16 @@ const client = new Client({ partials: ["MESSAGE", "CHANNEL", "REACTION", "USER"]
 
   // Handle Button interations
   client.on('interactionCreate', interaction => {
-    if (interaction.isSelectMenu()){
+
+    //  Slow mode interactions
+    if (interaction.isSelectMenu() && interaction.customId === "slow-mode"){
       handleSlowModeSelectMenuInteration(client, interaction)
     }
 
     if (interaction.isButton() && interaction.customId === "clear-slow-mode"){
       handleClearSlowModeInteraction(client, interaction)
     }
+
   })
 
 })()

@@ -23,9 +23,10 @@ const createMonkeCommandsbutton = async (client) => {
     //  Get the list of server channels
     const serverChannelList = getListOfServerChannels(client)
 
+    let serverChannelsOptionsArray = []
+    
     //  :step 2:
     //  form the options array object from the server channels list
-    let serverChannelsOptionsArray = []
     serverChannelList.map(channel => {
       if(channel.type === "GUILD_TEXT"){
         serverChannelsOptionsArray.push({label: channel.name, value: channel.name})
@@ -34,7 +35,7 @@ const createMonkeCommandsbutton = async (client) => {
 
     //  :step 3:
     //  Create the button components 
-    const row = new MessageActionRow()
+    const row = new MessageActionRow() 
       .addComponents(
         new MessageSelectMenu()
           .setCustomId('slow-mode')
@@ -47,7 +48,7 @@ const createMonkeCommandsbutton = async (client) => {
         new MessageButton()
           .setCustomId('clear-slow-mode')
           .setLabel('Clear All Slow Modes')
-          .setStyle('PRIMARY')
+          .setStyle('DANGER')
       )
 
     const commandEmbed = new MessageEmbed()
