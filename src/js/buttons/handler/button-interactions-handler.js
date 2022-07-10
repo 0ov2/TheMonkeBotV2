@@ -1,3 +1,5 @@
+
+//  :code:
 const { getDiscordChannelObject, getListOfServerChannels } = require("../../helpers/channelHelpers")
 
 
@@ -24,7 +26,7 @@ const handleClearSlowModeInteraction = (client, interaction) => {
 
   let rateLimitRemovedCount = 0
 
-  // :step 1:
+  //  :step 1:
   //  get list of server channels
   const serverChannelsList = getListOfServerChannels(client)
 
@@ -42,7 +44,11 @@ const handleClearSlowModeInteraction = (client, interaction) => {
   //  :step 3:
   //  handle interaction
   interaction.deferUpdate("true")
-  interaction.user.send(`${rateLimitRemovedCount} channels rate limits were removed`)
+  interaction.user.send(`${rateLimitRemovedCount} channel rate limits were removed`)
+
+
+  //  TODO:
+  //  Log interaction
 
 }
 

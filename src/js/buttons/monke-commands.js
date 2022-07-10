@@ -32,7 +32,8 @@ const createMonkeCommandsbutton = async (client) => {
       }
     })
 
-
+    //  :step 3:
+    //  Create the button components 
     const row = new MessageActionRow()
       .addComponents(
         new MessageSelectMenu()
@@ -45,7 +46,7 @@ const createMonkeCommandsbutton = async (client) => {
       .addComponents(
         new MessageButton()
           .setCustomId('clear-slow-mode')
-          .setLabel('Clear Slow Mode')
+          .setLabel('Clear All Slow Modes')
           .setStyle('PRIMARY')
       )
 
@@ -54,6 +55,8 @@ const createMonkeCommandsbutton = async (client) => {
         .setTitle("Slow Mode")
         .setDescription("Set a 1 minute slow mode for a specific channel")
     
+        //  :step 4:
+        //  Send the embed with the button components
         await monkeCommandChannel.send({embeds: [commandEmbed], components: [row, clearSlowModeButton]}).then(msg => msg.pin())
       }
     

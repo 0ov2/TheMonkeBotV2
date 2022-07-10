@@ -21,23 +21,22 @@ const client = new Client({ partials: ["MESSAGE", "CHANNEL", "REACTION", "USER"]
 //  runtime
 (() => {
 
-  //  :step 1:
   //  Login to MonkeBotV2
   client.login(process.env.TOKEN)
 
-  //  :step 2:
   //  listen for bot online
   client.on("ready", () => {
+
     //  monke online message
     sendMessageToChannel(client, "monke-bot", "Monke Bot V2 Ready")
 
 
     //  Set up button commands in monke-commands channel
     createMonkeCommandsbutton(client)
+    
+    
+    //  Initialise CRON jobs
   })
-
-  //  Initialise CRON jobs
-
 
 
   // Handle Button interations
