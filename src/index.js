@@ -7,10 +7,11 @@ const { Client } = require('discord.js');
 require('dotenv').config();
 
 //  :code:
-const { sendMessageToChannel } = require("./js/helpers/channelHelpers.js")
+const { sendMessageToChannel, getDiscordChannelObject } = require("./js/helpers/channelHelpers.js")
 const { createMonkeCommandsbutton, createMoveOctaneButton } = require("./js/buttons/monke-commands");
 const { handleSlowModeSelectMenuInteration, handleClearSlowModeInteraction, moveOctaneInteraction } = require('./js/buttons/handler/button-interactions-handler.js');
 const { setUpAvailabilityCronJobs } = require('./js/cron-jobs/cronJobs.js');
+const { avavilabilityReactionsHandler } = require('./js/helpers/messageHelpers.js');
 
 //  :statics:
 const client = new Client({ partials: ["MESSAGE", "CHANNEL", "REACTION", "USER"], intents: ["GUILD_VOICE_STATES", "GUILDS", "GUILD_MEMBERS", "GUILD_MESSAGES", "GUILD_MESSAGE_REACTIONS"]});
@@ -61,10 +62,15 @@ const client = new Client({ partials: ["MESSAGE", "CHANNEL", "REACTION", "USER"]
 
 
 client.on("messageReactionAdd", async (reaction, user) => { 
+  const knownAvailbilityChannels = ["op-availability", "dt-availability", "octane-avilability"]
+
 
   //  availability
-  const message = await reaction.message.fetch()
-  console.log(message);
+  console.log(reaction.message.channel.name);
+  if (knownAvailbilityChannels.includes(reaction.message.channel.name)){
+    avavilabilityReactionsHandler(reaction, user)
+  }
+
 })
 
 
