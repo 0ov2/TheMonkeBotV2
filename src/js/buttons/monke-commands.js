@@ -14,7 +14,7 @@ const createMonkeCommandsbutton = async (client) => {
   const monkeCommandChannel = getDiscordChannelObject(client, "monke-commands")
   const pinnedMessages = await monkeCommandChannel.messages.fetchPinned()
 
-  if (pinnedMessages.first()){
+  if (pinnedMessages.size > 1){
 
     return console.log("Command button already exists");
 
@@ -63,4 +63,38 @@ const createMonkeCommandsbutton = async (client) => {
     
 }
 
-module.exports = {createMonkeCommandsbutton}
+
+const createMoveOctaneButton = async (client) => {
+
+  //  :step 1;
+  //  Check if the commands message already exists 
+  const monkeCommandChannel = getDiscordChannelObject(client, "monke-commands")
+  const pinnedMessages = await monkeCommandChannel.messages.fetchPinned()
+
+  if (pinnedMessages.size > 1){
+
+    return console.log("Move Octane command already exists");
+
+  } else {
+
+    const moveOctaneButton = new MessageActionRow()
+    .addComponents(
+      new MessageButton()
+        .setCustomId('move-octane')
+        .setLabel('Move Octane')
+        .setStyle('PRIMARY')
+    )
+  
+    const commandEmbed = new MessageEmbed()
+      .setColor("ORANGE")
+      .setTitle("Move Octane")
+      .setDescription("Move anyone in Octane VC to fam-2 (Hidden)")
+  
+      //  :step 4:
+      //  Send the embed with the button components
+      await monkeCommandChannel.send({embeds: [commandEmbed], components: [moveOctaneButton]}).then(msg => msg.pin())
+    
+  }
+}
+
+module.exports = { createMonkeCommandsbutton, createMoveOctaneButton }

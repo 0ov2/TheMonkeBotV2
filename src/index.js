@@ -8,11 +8,12 @@ require('dotenv').config();
 
 //  :code:
 const { sendMessageToChannel } = require("./js/helpers/channelHelpers.js")
-const { createMonkeCommandsbutton } = require("./js/buttons/monke-commands");
-const { handleSlowModeSelectMenuInteration, handleClearSlowModeInteraction } = require('./js/buttons/handler/button-interactions-handler.js');
+const { createMonkeCommandsbutton, createMoveOctaneButton } = require("./js/buttons/monke-commands");
+const { handleSlowModeSelectMenuInteration, handleClearSlowModeInteraction, moveOctaneInteraction } = require('./js/buttons/handler/button-interactions-handler.js');
+const { setUpAvailabilityCronJobs } = require('./js/cron-jobs/cronJobs.js');
 
 //  :statics:
-const client = new Client({ partials: ["MESSAGE", "CHANNEL", "REACTION", "USER"], intents: ["GUILD_VOICE_STATES", "GUILDS", "GUILD_MEMBERS", "GUILD_MESSAGES"]});
+const client = new Client({ partials: ["MESSAGE", "CHANNEL", "REACTION", "USER"], intents: ["GUILD_VOICE_STATES", "GUILDS", "GUILD_MEMBERS", "GUILD_MESSAGES", "GUILD_MESSAGE_REACTIONS"]});
 
 
 
@@ -31,9 +32,12 @@ const client = new Client({ partials: ["MESSAGE", "CHANNEL", "REACTION", "USER"]
 
     //  Set up button commands in monke-commands channel
     createMonkeCommandsbutton(client)
-    
+    createMoveOctaneButton(client)
     
     //  Initialise CRON jobs
+    setUpAvailabilityCronJobs(client)
+
+
   })
 
 
@@ -48,8 +52,21 @@ const client = new Client({ partials: ["MESSAGE", "CHANNEL", "REACTION", "USER"]
     if (interaction.isButton() && interaction.customId === "clear-slow-mode"){
       handleClearSlowModeInteraction(client, interaction)
     }
+    
+    if (interaction.isButton() && interaction.customId === "move-octane"){
+      moveOctaneInteraction(client, interaction)
+    }
 
   })
+
+
+client.on("messageReactionAdd", async (reaction, user) => { 
+
+  //  availability
+  const message = await reaction.message.fetch()
+  console.log(message);
+})
+
 
 })()
 

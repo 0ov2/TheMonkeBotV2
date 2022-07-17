@@ -53,4 +53,26 @@ const handleClearSlowModeInteraction = (client, interaction) => {
 
 }
 
-module.exports = { handleSlowModeSelectMenuInteration, handleClearSlowModeInteraction }
+const moveOctaneInteraction = (client, interaction) => {
+  //  :step 1:
+  //  Get the channel objects for octane vs and fam 2
+  const famTwoHiddenChannelObject = getDiscordChannelObject(client, "fam-2 (Hidden)")
+  const octaneVCChannelObject = getDiscordChannelObject(client, "octane")
+
+
+  //  :step 2:
+  //  map through users in voice channel and set their active channel to fam2 hidden
+  if (octaneVCChannelObject){
+    octaneVCChannelObject.members.map(userObject => {
+      userObject.voice.setChannel(famTwoHiddenChannelObject)
+    })
+  }
+
+  interaction.deferUpdate("true")
+
+
+  //  TODO: log interaction
+}
+
+
+module.exports = { handleSlowModeSelectMenuInteration, handleClearSlowModeInteraction, moveOctaneInteraction }
