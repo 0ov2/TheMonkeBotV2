@@ -34,4 +34,8 @@ const setUpAvailabilityCronJobs = (client) => {
 
 }
 
-module.exports = { setUpAvailabilityCronJobs }
+const matchAnnouncementCronJob = (client, message, channel) => {
+  
+}
+
+module.exports = { setUpAvailabilityCronJobs, matchAnnouncementCronJob }

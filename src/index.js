@@ -3,16 +3,18 @@
 //
 
 //  :packages:
-const { Client } = require('discord.js');
+const { Client, EmbedBuilder } = require('discord.js');
 require('dotenv').config();
 
 //  :code:
-const { sendMessageToChannel } = require("./js/helpers/channelHelpers.js")
+const { sendMessageToChannel, getDiscordChannelObject, getDiscordChannelID } = require("./js/helpers/channelHelpers.js")
 const { createMonkeCommandsbutton, createMoveOctaneButton } = require("./js/buttons/monke-commands");
 const { handleSlowModeSelectMenuInteration, handleClearSlowModeInteraction, moveOctaneInteraction } = require('./js/buttons/handler/button-interactions-handler.js');
 const { setUpAvailabilityCronJobs } = require('./js/cron-jobs/cronJobs.js');
 const { avavilabilityReactionsHandler } = require('./js/helpers/reactionCountHelper.js');
-const { DTAvailabilityLogging } = require('./js/logging.js');
+const { DTAvailabilityLogging, logDeletedMessage } = require('./js/logging.js');
+const { getLatestDTAvailabilityMessageObject } = require('./js/helpers/getMessageIdFromContent.js');
+const { fetchUpcomingMatches } = require('./js/vrml-api/index.js');
 
 //  :statics:
 const client = new Client({ partials: ["MESSAGE", "CHANNEL", "REACTION", "USER"], intents: ["GUILD_VOICE_STATES", "GUILDS", "GUILD_MEMBERS", "GUILD_MESSAGES", "GUILD_MESSAGE_REACTIONS"] });
@@ -30,13 +32,15 @@ const knownAvailbilityChannels = ["op-availability", "dt-availability", "octane-
     //  monke online message
     sendMessageToChannel(client, "monke-bot", "Monke Bot V2 Ready")
 
-
     //  Set up button commands in monke-commands channel
     createMonkeCommandsbutton(client)
     createMoveOctaneButton(client)
 
     //  Initialise CRON jobs
     setUpAvailabilityCronJobs(client)
+
+    //  VRML api
+    fetchUpcomingMatches(client)
 
   })
 
@@ -61,23 +65,42 @@ const knownAvailbilityChannels = ["op-availability", "dt-availability", "octane-
 
   //  handle message reactions
   client.on("messageReactionAdd", async (reaction, user) => {
-
-    const DTAvailabilitMessage = await getLatestDTAvailabilityMessageObject(client)
-
+    
     //  availability
     if (knownAvailbilityChannels.includes(reaction.message.channel.name)) {
       avavilabilityReactionsHandler(reaction, user)
     }
     
     //  logging DT sign up
-    //  needs testing
-    if (reaction.message.id === DTAvailabilitMessage.id){
-      DTAvailabilityLogging(client, reaction, user, "availability")
-    } else if (reaction.message.id !== DTAvailabilitMessage.id){
-      DTAvailabilityLogging(client, reaction, user, "custom")
-    }
+    const DTAvailabilitMessage = await getLatestDTAvailabilityMessageObject(client)
+    const DTAvailabilityChannelID = await getDiscordChannelID(client, "dt-availability")
 
+    if (reaction.message.channel.id === DTAvailabilityChannelID){
+      if (reaction.message.id === DTAvailabilitMessage.id){
+        await DTAvailabilityLogging(client, reaction, user, "reaction")
+      } else if (reaction.message.id != DTAvailabilitMessage.id){
+        await DTAvailabilityLogging(client, reaction, user, "custom")
+      }
+    }
   })
 
+  client.on("messageReactionRemove", async (reaction, user) => {
+
+    //  logging DT sign up
+    const DTAvailabilitMessage = await getLatestDTAvailabilityMessageObject(client)
+    const DTAvailabilityChannelID = await getDiscordChannelID(client, "dt-availability")
+
+    if (reaction.message.channel.id === DTAvailabilityChannelID){
+      if (reaction.message.id === DTAvailabilitMessage.id){
+        await DTAvailabilityLogging(client, reaction, user, "remove_reaction")
+      } else if (reaction.message.id != DTAvailabilitMessage.id){
+        await DTAvailabilityLogging(client, reaction, user, "remove_custom")
+      }
+    }
+  })
+
+  client.on("messageDelete", async (message) => {
+    logDeletedMessage(message, client)
+  })
 })()
 

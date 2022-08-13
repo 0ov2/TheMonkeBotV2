@@ -1,0 +1,370 @@
+{
+    "game": {
+        "roundsPerMap": 10,
+        "urlShort": "Pavlov",
+        "urlComplete": "https://vrmasterleague.com/Pavlov",
+        "gameByUrl": "https://store.steampowered.com/search/?developer=davevillz",
+        "gameByImage": "pavlov",
+        "headerImage": "pavlov-header",
+        "homeTitleImage": "pavlov-header-title",
+        "discordInvite": "G6T5JR9",
+        "discordServerID": "575848473098977290",
+        "youtube": "https://www.youtube.com/c/PavlovMasterLeague",
+        "twitter": "Pavlov_VRML",
+        "reddit": "VRMasterLeague",
+        "facebook": "VRMasterLeague",
+        "gameID": "kUBoM00JUrqJiZgexysE3g2",
+        "gameName": "Pavlov",
+        "teamMode": "team",
+        "matchMode": "match",
+        "url": "/Pavlov",
+        "hasSubstitutes": true,
+        "hasTies": false,
+        "hasCasters": true,
+        "hasCameraman": false
+    },
+    "newsPosts": [
+        {
+            "newsID": "cxK9cxSyK4a0NvMGrsE09Q2",
+            "userID": "P0wH1S-seJDJiSMtvm_t_A2",
+            "userLogo": "/images/logos/users/5774f7ab-012b-44e3-b148-8bc3ecde8008.png",
+            "userName": "Leeloo",
+            "dateSubmittedUTC": "2022-08-10 02:37",
+            "dateEditedUTC": null,
+            "title": "Season 10 is Being Extended!",
+            "html": "<p>We have some news for you!</p>\n<p>We will be extending Season 10 by an additional 3 weeks. this will increase the season length from 16 to 19 weeks. The reason we are doing this is to line up the grand finals weekends more in sync with the other leagues, and will therefore have consecutive weekends of grand finals across VR Master League. We are also increasing it to reduce off-season as we are working on a new formula for season planning, more in depth about this process is to be discussed and revealed in the off-season, but for now we are planning a \"Annual Calendar\" to showcase all seasons and off-seasons and the off-seasons events in one calendar year, we just need to make sure we are able to execute on this before actually doing it, and it requires a little bit more work to determine possibility. You can find the new updated calendar below as well as being able to do the command \"!Calendar\" in the <span class=\"channelMention wrapper-1ZcZW- iconMention-3WxjBe iconMentionText-1_WCtN mention interactive\" tabindex=\"0\" role=\"link\">bot channel.</span></p>\n<p>We have also been discussing the Open Qualifier, Closed Qualifier and Bronze, Semi and Grand Finals format and we have been getting a little bit sidetracked getting this sorted. but we are hoping to have something final to announce very soon so bare with us a little longer!</p>\n<p>Stay tuned!</p>\n<p><img src=\"../../images/news/93d40095-3fcb-47ba-872e-da5f95669692.png\" /></p>"
+        },
+        {
+            "newsID": "rQNujqD0ut-mWb32jLrFWw2",
+            "userID": "P0wH1S-seJDJiSMtvm_t_A2",
+            "userLogo": "/images/logos/users/5774f7ab-012b-44e3-b148-8bc3ecde8008.png",
+            "userName": "Leeloo",
+            "dateSubmittedUTC": "2022-05-30 17:53",
+            "dateEditedUTC": "2022-08-10 12:49",
+            "title": "Season 10 Has Been Announced! ",
+            "html": "<p><span class=\"css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0\">Start date: June 13th!</span></p>\n<p><span class=\"css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0\">The community is busy ironing out the details, giving feedback about the map pool, and forming new teams!&nbsp;</span><span class=\"css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0\">Don't miss out! <br><br></span>Register here: <a class=\"css-4rbku5 css-18t94o4 css-901oao css-16my406 r-1cvl2hr r-1loqt21 r-poiln3 r-bcqeeo r-qvutc0\" dir=\"ltr\" role=\"link\" href=\"http://vrml.gg/pavlov/register\" target=\"_blank\" rel=\"noopener\">http://vrml.gg/pavlov/register</a><br>Join the Discord server here: <a dir=\"ltr\" role=\"link\" href=\"https://t.co/tCXDyYkzob\" target=\"_blank\" rel=\"noopener noreferrer\"><span aria-hidden=\"true\">https://</span>discord.gg/G6T5JR9</a></p>\n<p><img src=\"../../images/news/609622db-52b0-4a24-abe4-1aad7c94fd9c.png\"></p>"
+        },
+        {
+            "newsID": "VD_wcyCxwwaDf_SUIEWWPQ2",
+            "userID": "P0wH1S-seJDJiSMtvm_t_A2",
+            "userLogo": "/images/logos/users/5774f7ab-012b-44e3-b148-8bc3ecde8008.png",
+            "userName": "Leeloo",
+            "dateSubmittedUTC": "2022-05-10 18:47",
+            "dateEditedUTC": "2022-05-12 03:47",
+            "title": "And... We Have a Winner!",
+            "html": "<p><span class=\"css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0\">The winner of the Pavlov VR</span>&nbsp;E<span class=\"css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0\">dit Contest is... </span><span class=\"css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0\">Blackcat</span><span class=\"css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0\"> !<br><br>They win a HyperX Cloud II headset! Thanks to everyone who participated! Go check out each entry individually:</span></p>\n<p>The_Rogue12 - <a tabindex=\"0\" title=\"https://youtu.be/yb5tYEjLrOE\" role=\"button\" href=\"https://youtu.be/yb5tYEjLrOE\" target=\"_blank\" rel=\"noopener\">https://youtu.be/yb5tYEjLrOE</a><br>Blackcat - <a tabindex=\"0\" title=\"https://youtu.be/IBBBD0XBMCA\" role=\"button\" href=\"https://youtu.be/IBBBD0XBMCA\" target=\"_blank\" rel=\"noreferrer noopener\">https://youtu.be/IBBBD0XBMCA</a> <br>callme69og666 - <a tabindex=\"0\" title=\"https://youtu.be/BEzpeIZv8FI\" role=\"button\" href=\"https://youtu.be/BEzpeIZv8FI\" target=\"_blank\" rel=\"noreferrer noopener\">https://youtu.be/BEzpeIZv8FI</a> <br>Crumb - <a tabindex=\"0\" title=\"https://youtu.be/r8JyNlebVw8\" role=\"button\" href=\"https://youtu.be/r8JyNlebVw8\" target=\"_blank\" rel=\"noreferrer noopener\">https://youtu.be/r8JyNlebVw8</a> <br>Budgy - <a tabindex=\"0\" title=\"https://youtu.be/4DA46s25oPc\" role=\"button\" href=\"https://youtu.be/4DA46s25oPc\" target=\"_blank\" rel=\"noreferrer noopener\">https://youtu.be/4DA46s25oPc</a>&nbsp;</p>\n<p><span class=\"timestamp-p1Df1m\"><span class=\"edited-1v5nT8\">For the full stream and judging:</span></span></p>\n<p><iframe src=\"https://www.youtube.com/embed/Cp0dX8hoBIM\" width=\"100%\" height=\"442px\" allowfullscreen=\"allowfullscreen\"></iframe></p>"
+        },
+        {
+            "newsID": "mEPacB5DdaOegiTWRZS3CQ2",
+            "userID": "P0wH1S-seJDJiSMtvm_t_A2",
+            "userLogo": "/images/logos/users/5774f7ab-012b-44e3-b148-8bc3ecde8008.png",
+            "userName": "Leeloo",
+            "dateSubmittedUTC": "2022-04-24 17:00",
+            "dateEditedUTC": null,
+            "title": "Announcing the Pavlov Montage Edit Competition!",
+            "html": "<div class=\"contents-2MsGLg\">\n<div id=\"message-content-967821465388990484\" class=\"markup-eYLPri messageContent-2t3eCI\">We have a HyperX Cloud II headset to give away to the winner.</div>\n<div class=\"markup-eYLPri messageContent-2t3eCI\">&nbsp;</div>\n<div class=\"markup-eYLPri messageContent-2t3eCI\"><strong><u>Rules:</u></strong> <br>- Use non-copyrighted music <br>- Upload the video to Youtube <br>- Submit your video in the #<span class=\"wrapper-1ZcZW- iconMention-3WxjBe iconMentionText-1_WCtN mention interactive\" tabindex=\"0\" role=\"link\">submit-highlights</span> channel in the Pavlov VRML Discord server or the google form linked below. <br>- Focus on Search And Destroy (not zombies, TTT, etc)</div>\n<div class=\"markup-eYLPri messageContent-2t3eCI\">&nbsp;</div>\n<div class=\"markup-eYLPri messageContent-2t3eCI\"><strong><u>Deadline:</u></strong> <br>Saturday May 7th, 2022</div>\n<div class=\"markup-eYLPri messageContent-2t3eCI\">&nbsp;</div>\n<div class=\"markup-eYLPri messageContent-2t3eCI\"><strong><u>About:</u></strong> <br>We want you make videos that hype up Pavlov and encourage people to get into the game. The montage doesn't strictly need to be about VRML Season 9, it can also just be a cool Pavlov edit. But please <strong>focus</strong> on Search And Destroy gameplay. You can find Season 9 related and submitted videos in the #<span class=\"wrapper-1ZcZW- iconMention-3WxjBe iconMentionText-1_WCtN mention interactive\" tabindex=\"0\" role=\"link\">submit-highlights</span> channel in the Pavlov VRML Discord server&nbsp;on the google spreadsheet, otherwise ask around for people to submit other awesome highlights!</div>\n<div class=\"markup-eYLPri messageContent-2t3eCI\">A panel of judges will review and score the entries live on Twitch (<a class=\"anchor-1MIwyf anchorUnderlineOnHover-2qPutX\" tabindex=\"0\" title=\"https://www.twitch.tv/pavlov_vrml\" role=\"button\" href=\"https://www.twitch.tv/pavlov_vrml\" target=\"_blank\" rel=\"noreferrer noopener\">https://www.twitch.tv/pavlov_vrml</a>) on May 7th at 18 UTC (2pm EST / 20 CET)</div>\n<div class=\"markup-eYLPri messageContent-2t3eCI\">Please submit your montages to this form once you have made one, we are excited to see all the creative montages! <a class=\"anchor-1MIwyf anchorUnderlineOnHover-2qPutX\" tabindex=\"0\" title=\"https://forms.gle/wE1mJ3mupmMru5FJ6\" role=\"button\" href=\"https://forms.gle/wE1mJ3mupmMru5FJ6\" target=\"_blank\" rel=\"noreferrer noopener\">https://forms.gle/wE1mJ3mupmMru5FJ6</a></div>\n<div class=\"markup-eYLPri messageContent-2t3eCI\"><img src=\"../../images/news/b0e3fb27-2be2-48cb-b47d-ef92e1572ec5.png\"></div>\n</div>\n<div id=\"message-accessories-967821465388990484\" class=\"container-2sjPya\">\n<div class=\"messageAttachment-CZp8Iv\">\n<div class=\"imageWrapper-oMkQl4 imageZoom-3yLCXY clickable-LksVCf embedWrapper-1MtIDg\">&nbsp;</div>\n</div>\n</div>"
+        },
+        {
+            "newsID": "raLjfIQyWV5_NmwZLUolKQ2",
+            "userID": "P0wH1S-seJDJiSMtvm_t_A2",
+            "userLogo": "/images/logos/users/5774f7ab-012b-44e3-b148-8bc3ecde8008.png",
+            "userName": "Leeloo",
+            "dateSubmittedUTC": "2022-04-18 14:12",
+            "dateEditedUTC": null,
+            "title": "ANNOUNCING OUR SEASON 9 CHAMPIONS!",
+            "html": "<div class=\"\" data-block=\"true\" data-editor=\"befv4\" data-offset-key=\"4c2l7-0-0\">\n<div class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\" data-offset-key=\"4c2l7-0-0\"><strong>Champions</strong></div>\n<div class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\" data-offset-key=\"4c2l7-0-0\"><span data-offset-key=\"4c2l7-0-0\">EU</span></div>\n</div>\n<div class=\"\" data-block=\"true\" data-editor=\"befv4\" data-offset-key=\"1ueqv-0-0\">\n<div class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\" data-offset-key=\"1ueqv-0-0\"><span data-offset-key=\"1ueqv-1-0\">1st - Crimson Claw</span></div>\n</div>\n<div class=\"\" data-block=\"true\" data-editor=\"befv4\" data-offset-key=\"2k2ng-0-0\">\n<div class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\" data-offset-key=\"2k2ng-0-0\"><span data-offset-key=\"2k2ng-1-0\">2nd - Friendly Fire </span></div>\n</div>\n<div class=\"\" data-block=\"true\" data-editor=\"befv4\" data-offset-key=\"1aac4-0-0\">\n<div class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\" data-offset-key=\"1aac4-0-0\"><span data-offset-key=\"1aac4-1-0\">3rd - Old People</span></div>\n</div>\n<div class=\"\" data-block=\"true\" data-editor=\"befv4\" data-offset-key=\"51jm2-0-0\">\n<div class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\" data-offset-key=\"51jm2-0-0\"><span data-offset-key=\"51jm2-0-0\">VOD: <a href=\"twitch.tv/videos/1458862304\">twitch.tv/videos/1458862304</a></span></div>\n<div class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\" data-offset-key=\"51jm2-0-0\">&nbsp;</div>\n</div>\n<div class=\"\" data-block=\"true\" data-editor=\"befv4\" data-offset-key=\"bbed9-0-0\">\n<div class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\" data-offset-key=\"bbed9-0-0\"><span data-offset-key=\"bbed9-0-0\">NA</span></div>\n</div>\n<div class=\"\" data-block=\"true\" data-editor=\"befv4\" data-offset-key=\"e84fo-0-0\">\n<div class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\" data-offset-key=\"e84fo-0-0\"><span data-offset-key=\"e84fo-1-0\">1st - REKT </span></div>\n</div>\n<div class=\"\" data-block=\"true\" data-editor=\"befv4\" data-offset-key=\"dslrf-0-0\">\n<div class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\" data-offset-key=\"dslrf-0-0\"><span data-offset-key=\"dslrf-2-0\">2nd - VortexVRML</span></div>\n</div>\n<div class=\"\" data-block=\"true\" data-editor=\"befv4\" data-offset-key=\"586pa-0-0\">\n<div class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\" data-offset-key=\"586pa-0-0\"><span data-offset-key=\"586pa-1-0\">3rd - MyVoltronList</span></div>\n</div>\n<div class=\"\" data-block=\"true\" data-editor=\"befv4\" data-offset-key=\"4upf-0-0\">\n<div class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\" data-offset-key=\"4upf-0-0\"><a href=\"twitch.tv/videos/1459110192\"><span data-offset-key=\"4upf-0-0\">twitch.tv/videos/1459110192</span></a></div>\n<div class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\" data-offset-key=\"4upf-0-0\">&nbsp;</div>\n</div>\n<div class=\"\" data-block=\"true\" data-editor=\"befv4\" data-offset-key=\"6asp9-0-0\">\n<div class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\" data-offset-key=\"6asp9-0-0\"><span data-offset-key=\"6asp9-0-0\">APAC</span></div>\n</div>\n<div class=\"\" data-block=\"true\" data-editor=\"befv4\" data-offset-key=\"di5m6-0-0\">\n<div class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\" data-offset-key=\"di5m6-0-0\"><span data-offset-key=\"di5m6-1-0\">1st - Maws n' Paws</span></div>\n</div>\n<div class=\"\" data-block=\"true\" data-editor=\"befv4\" data-offset-key=\"1kcev-0-0\">\n<div class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\" data-offset-key=\"1kcev-0-0\"><span data-offset-key=\"1kcev-1-0\">2nd - Billabong Bogans </span></div>\n</div>\n<div class=\"\" data-block=\"true\" data-editor=\"befv4\" data-offset-key=\"6ue93-0-0\">\n<div class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\" data-offset-key=\"6ue93-0-0\"><a href=\"twitch.tv/videos/1457584132\"><span data-offset-key=\"6ue93-0-0\">twitch.tv/videos/1457584132</span></a></div>\n<div class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\" data-offset-key=\"6ue93-0-0\"><img src=\"../../images/news/f1eeec8a-be95-44e6-bfb2-ee8fc640179c.png\"></div>\n<div class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\" data-offset-key=\"6ue93-0-0\">&nbsp;</div>\n<div class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\" data-offset-key=\"6ue93-0-0\">&nbsp;</div>\n<div class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\" data-offset-key=\"6ue93-0-0\"><strong>Special Mentions</strong></div>\n<div class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\" data-offset-key=\"6ue93-0-0\">\n<div class=\"\" data-block=\"true\" data-editor=\"du14j\" data-offset-key=\"cfpgv-0-0\">\n<div class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\" data-offset-key=\"cfpgv-0-0\">Finnish Bear Influenced for stunning viewers with an impressive performance during Closed Qualifiers!</div>\n<div class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\" data-offset-key=\"cfpgv-0-0\">Soulstice for coming out of nowhere and impressing with their organization and dedication to the game as one of the best new teams this season!</div>\n<div class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\" data-offset-key=\"cfpgv-0-0\">&nbsp;</div>\n<div class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\" data-offset-key=\"cfpgv-0-0\">&nbsp;</div>\n<div class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\" data-offset-key=\"cfpgv-0-0\"><strong>Thanks!!</strong></div>\n<div class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\" data-offset-key=\"cfpgv-0-0\">\n<div class=\"\" data-block=\"true\" data-editor=\"e3a1a\" data-offset-key=\"a2cuq-0-0\">\n<div class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\" data-offset-key=\"a2cuq-0-0\"><span data-offset-key=\"a2cuq-0-0\">To the P</span><span data-offset-key=\"a2cuq-1-0\">avlov VR</span><span data-offset-key=\"a2cuq-2-0\"> comp community for another great season, filling out the feedback form, &amp; for showing up for casts. Tune in today for the Mod Q&amp;A session. We will be taking your feedback to help shape Season 10!!<br></span>1430 PDT | 1730 EDT | 2130 UTC<br><a style=\"background-color: #ffffff;\" href=\"https://discord.gg/ee9CtSc9?event=965432038624735312\"><span data-offset-key=\"9rsn5-0-0\">https://discord.gg/ee9CtSc9?event=965432038624735312</span></a></div>\n<div class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\" data-offset-key=\"a2cuq-0-0\">&nbsp;</div>\n</div>\n<div class=\"\" data-block=\"true\" data-editor=\"e3a1a\" data-offset-key=\"9rsn5-0-0\">\n<div class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\" data-offset-key=\"9rsn5-0-0\">\n<div class=\"\" data-block=\"true\" data-editor=\"46oso\" data-offset-key=\"u27j-0-0\">\n<div class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\" data-offset-key=\"u27j-0-0\"><span data-offset-key=\"u27j-0-0\">To our sponsors &amp; partners!</span></div>\n</div>\n<div class=\"\" data-block=\"true\" data-editor=\"46oso\" data-offset-key=\"7n7c5-0-0\">\n<div class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\" data-offset-key=\"7n7c5-0-0\"><span data-offset-key=\"7n7c5-0-0\"><a href=\"https://hyperx.gg/VRMLhxlootdrop\">HyperX</a>,</span> <span data-offset-key=\"7n7c5-2-0\"><a href=\"https://www.protubevr.com/\">ProTubeVR</a>,</span> <span data-offset-key=\"7n7c5-4-0\"><a href=\"https://vrcover.com/#VRML_VRCover\">VR Cover</a>,</span> <a href=\"https://arma.gg/collections/vrml\"><span data-offset-key=\"7n7c5-6-0\">ARMAgg</span></a></div>\n</div>\n<div class=\"\" data-block=\"true\" data-editor=\"46oso\" data-offset-key=\"3kea-0-0\">\n<div class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\" data-offset-key=\"3kea-0-0\"><span data-offset-key=\"3kea-0-0\">They contributed to bring Pavlov VRML it's biggest prize pool worth $7,500 USD &amp; over $800 in giveaways for the community!</span></div>\n</div>\n<div class=\"\" data-block=\"true\" data-editor=\"46oso\" data-offset-key=\"53ss8-0-0\">\n<div class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\" data-offset-key=\"53ss8-0-0\"><span data-offset-key=\"53ss8-0-0\">&nbsp;</span></div>\n</div>\n<div class=\"\" data-block=\"true\" data-editor=\"46oso\" data-offset-key=\"52gcb-0-0\">\n<div class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\" data-offset-key=\"52gcb-0-0\"><span data-offset-key=\"52gcb-0-0\">Thanks <a href=\"https://store.steampowered.com/search/?developer=davevillz\">Vankrupt Games</a></span><span data-offset-key=\"52gcb-2-0\">! The updates &amp; PavTV were appreciated by all!</span></div>\n<div class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\" data-offset-key=\"52gcb-0-0\">&nbsp;</div>\n<div class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\" data-offset-key=\"52gcb-0-0\">\n<div class=\"\" data-block=\"true\" data-editor=\"fmlfi\" data-offset-key=\"4dhii-0-0\">\n<div class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\" data-offset-key=\"4dhii-0-0\"><span data-offset-key=\"4dhii-0-0\">And, we would like to thank the Mod &amp; League Casting team for all the hard work they have done this season &amp; the amazing show this weekend. Without them it would not be nearly as fun to watch these games! </span><span data-offset-key=\"9mj77-0-0\">Check out their personal streams for more great </span><span data-offset-key=\"9mj77-1-0\">community</span><span data-offset-key=\"9mj77-2-0\"> content!<br><br>See you all in Season 10!</span></div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>"
+        },
+        {
+            "newsID": "37zCs1I1RvqNQS5L4Ovesw2",
+            "userID": "P0wH1S-seJDJiSMtvm_t_A2",
+            "userLogo": "/images/logos/users/5774f7ab-012b-44e3-b148-8bc3ecde8008.png",
+            "userName": "Leeloo",
+            "dateSubmittedUTC": "2022-04-15 03:39",
+            "dateEditedUTC": null,
+            "title": "Season 9 Championship Finals are This Weekend!",
+            "html": "<p><span class=\"css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0\">North American, European, and APAC top teams battle for the crown and <strong>$7,500 prize pool</strong>!</span><span class=\"css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0\"> Join us for excellent Pavlov VR </span><span class=\"css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0\">and giveaways!</span></p>\n<p>&nbsp;</p>\n<p><span class=\"css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0\"><strong>APAC Finals - Saturday April 16th, 2000 AEST (0600 EDT)</strong><br><a href=\"../Teams/ydI5eiCinqacBZLecqbZIw2\">Billabong Bogans</a> vs <a href=\"../Teams/H1-OPxlWvozy4H8EYHzr6Q2\">Maws 'n Paws</a></span></p>\n<p><span class=\"css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0\">Vying for the title of APAC Champions and $900 USD prize pool, this battle is one in the making! In three encounters, Maws 'n Paws have overtaken the Billabong Bogans twice. Billabongs have a great track run this season, finishing 2nd!</span></p>\n<p>&nbsp;</p>\n<p><span class=\"css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0\"><strong>European Semi-Finals - Saturday April 16th<br></strong></span><span class=\"css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0\"><a href=\"../Teams/CcYyZKvMHqj5nH3K7GUGjQ2\">Crimson Claw</a> vs <a class=\"team_link\" href=\"../Teams/_yVfPr3PWlIakPhauJTIAA2\"><span class=\"team_name\">Finnish Bear Influenced</span></a> at 1130 EDT<br><a href=\"../Teams/ErbuozweC0N6yLgUZm4Www2\">Old People</a> vs <a href=\"../Teams/87t5OsganEZXp9_QM6rhog2\">Friendly Fire</a> at 1330 EDT</span></p>\n<p><span class=\"css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0\">FBI snagged the final spot in the Semi-Finals with an impressive upset during last week's closed qualifiers! They'll be going up against 1st place Crimson Claw. Can they pull off another upset against this undefeated team? Then, Old People and Friendly Fire will be facing off! Exchanging blows all season, this match will be down to the wire as both teams fight for spot in the Finals! The winning team of each match will qualify for the Grand Finals, while defeated teams will play for 3rd place in the Bronze Medal Match.</span></p>\n<p>&nbsp;</p>\n<p><span class=\"css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0\"> <strong>North American Semi-Finals - Saturday April 16th</strong>, 1830 EDT<br></span><span class=\"css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0\"><a href=\"../Teams/84IELfGbFfCN35MN1HwpFA2\">REKT</a> vs <a href=\"../Teams/H_66wnGXonASD0FpKHxiTw2\">Dream Team</a>&nbsp;<br><a href=\"../Teams/nG96EILDx49dPw3iBjNRjg2\">Vortex </a>vs <a href=\"../Teams/v9zg3ZmmIlrpP9PXzwAxUQ2\">MyVoltronList</a><br></span></p>\n<p><span class=\"css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0\">One of the 10 biggest rivalries of all time, REKT and Dream Team are playing again for the coveted 1st place! Vortex and MyVoltronList are also in the mix, both looking to make it their year as Champions! Who will move on to the Finals? Who will be eliminated? The winning team of each match will qualify for the Grand Finals, while defeated teams will play for 3rd place in the Bronze Medal Match.</span></p>\n<p>&nbsp;</p>\n<p><span class=\"css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0\"><strong>European Finals - Sunday April 17th</strong><br></span></p>\n<p><span class=\"css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0\">Bronze Medal Match at 1130 EDT<br>Grand Finals Match at 1330 EDT</span></p>\n<p><strong><span class=\"css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0\">North American Finals - Sunday April 17th</span></strong><span class=\"css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0\">, at 1830 EDT</span></p>\n<p><span class=\"css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0\">Bronze Medal Match<br>Grand Finals Match</span></p>\n<p><span class=\"css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0\">This is it! These matches will be the last chance for these teams to give it their all and take home a piece of the prize pool! Join us for the conclusion of Season 9!</span></p>\n<p>&nbsp;</p>\n<p><span class=\"css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0\">Full Championship Details: <a href=\"../Championships/Season9\">https://vrmasterleague.com/Pavlov/Championships/Season9</a>&nbsp;<br>Live on Twitch! </span><a class=\"css-4rbku5 css-18t94o4 css-901oao css-16my406 r-1cvl2hr r-1loqt21 r-poiln3 r-bcqeeo r-qvutc0\" dir=\"ltr\" role=\"link\" href=\"https://t.co/3SkDONtrUm\" target=\"_blank\" rel=\"noopener noreferrer\"><span class=\"css-901oao css-16my406 r-poiln3 r-hiw28u r-qvk6io r-bcqeeo r-qvutc0\" aria-hidden=\"true\">http://</span>twitch.tv/pavlov_vrml</a></p>\n<p><img src=\"../../images/news/3ec6a24d-d894-4800-907a-8c2abe6dd89c.png\"></p>"
+        },
+        {
+            "newsID": "rabuk40BO-3qmqasMVEnww2",
+            "userID": "P0wH1S-seJDJiSMtvm_t_A2",
+            "userLogo": "/images/logos/users/5774f7ab-012b-44e3-b148-8bc3ecde8008.png",
+            "userName": "Leeloo",
+            "dateSubmittedUTC": "2021-10-12 21:10",
+            "dateEditedUTC": null,
+            "title": "Season 8 Feedback Form is Out!",
+            "html": "<p>Thanks everyone for an exciting and competitive Season 8 ! Hopefully everyone is trying out the extensive new updates to the game and honing their skills using the new weapon balance, prices, movement differences, and utility limits. There are quite a few changes which will make for stimulating challenges and new opportunities for all players and teams.</p><p>We'd like to hear your thoughts on Season 8, what changes you would like to see for Season 9, and any other feedback you would like to share with the moderation team (including but not limited to, 'how soon should Season 9 start?') </p><p>We've created a convenient survey here: <a href='https://forms.gle/CsuUB3VBKM8yiJSW9' target='_blank' style='color: var(--text-link);'>https://forms.gle/CsuUB3VBKM8yiJSW9</a> </p><p>Our goal is to improve the league and address our community's evolving needs and desires. Please take the time to fill out the survey so that your voice can be heard and we can work together to make Season 9 the best one yet!</p>"
+        },
+        {
+            "newsID": "H9ByDElIa4FbvN45tYGZGg2",
+            "userID": "P0wH1S-seJDJiSMtvm_t_A2",
+            "userLogo": "/images/logos/users/5774f7ab-012b-44e3-b148-8bc3ecde8008.png",
+            "userName": "Leeloo",
+            "dateSubmittedUTC": "2021-09-17 13:42",
+            "dateEditedUTC": "2021-09-20 00:02",
+            "title": "Have You Played the Newest Pavlov VR Beta Branch?",
+            "html": "<p>Now that season 8 is all wrapped up, we invite you to turn your attention to all the advancements made in the Pavlov VR Beta branch. Junt, community manager at Vankrupt Games, gave us the low down on the fixes and features that are new in this version and that are relevant to the Search and Destroy Mode:</p><p>-New skins with 1 drawcall to help performance</p><p>-New asynchronous loading system to help performance</p><p>-New industry map</p><p>-SND utility buy limits</p><p>-Added jiggle prevention to rapid strafe movement</p><p>-Various weapon tweaks with both interaction and balance (may need to view patch notes from betas to understand them all)</p><p>-Bomb explosion effects</p><p>-Grenade explosion effects</p><p>-PavTV now back online (still has a few kinks to iron out)</p><p>-Added bomb kill feed icon for SND</p><p>-Added new bullet decals for player bullet hits</p><p>-Added new server browser filters for TTT and OITC</p><p>-Added ability to attach laser to m9, de, and revolver</p><p>-Added ability to attach laser/flashlight to p90 and pump shotgun</p><p>-Added magazine optimizations to help with performance</p><p>-Adjusted net code to prevent high ping player advantage (competitive only)</p><p>-Added M'Kay slap mechanics to MP5, SMG, Autosniper, and AUG</p><p>-Adjusted Deagle to increase reloading speed slightly</p><p>-Adjusted bolt for AWP and anti-tank rifle to be more forgiving on fully latched and unlatched state</p><p>-Adjusted Vanas lowered RPM and boosted horizontal recoil</p><p>-Adjusted P90 recoil</p><p>-Fixed not being able to pick up grenades on the ground even though they’re highlighted</p><p>-Fixed SND bomb was able to be clipped when not planted</p><p>-Fixed the autoshotgun loading bounds</p><p>-Fixed culling issue in Santorini</p><p>-Removed bolt release binding from MP5, SMG, Autosniper, and AUG</p><p>-Added 'bVerboseLogging' server config var to now log killed/killedby/headshots/SND bomb Plants/Defuse/Explosions/Teamswitching/Teamkills/Roundstatechanges</p><p>-Added 'bCompetitive' option to game.ini default value is false. It will allow community servers to run competitive SND.</p><p>-Added basic stat tracking for community servers; it will dump to logs at match end (kills, assists, deaths, headshots, bombs planted, bombs defused, chickens killed etc)</p><p>-Added 'SetPin rcon command' (if no pin is passed in it will unlock the server).</p><p>Many community members have already been exploring the branch. Check out YellowHat's content on his YouTube Channel!</p><p>If you want your opinions about this branch known before next season, join the Pavlov VR Discord server and give your valuable feedback in the #pc-beta-feedback channel.</p><p>See you on the battlefield!</p><p><img src='/images/news/c76fd021-0b15-464f-9b8c-77fbf654bcf6.png'></p>"
+        },
+        {
+            "newsID": "5bf4YJ_oByd737X_ZbK_fw2",
+            "userID": "P0wH1S-seJDJiSMtvm_t_A2",
+            "userLogo": "/images/logos/users/5774f7ab-012b-44e3-b148-8bc3ecde8008.png",
+            "userName": "Leeloo",
+            "dateSubmittedUTC": "2021-09-06 19:35",
+            "dateEditedUTC": "2021-09-06 20:07",
+            "title": "Congrats to Our Season 8 Winners!",
+            "html": "<p>Announcing Pavlov VRML Season 8 Winners!</p><p><br></p><p>Congrats to <a href='https://vrmasterleague.com/Pavlov/Teams/ydI5eiCinqacBZLecqbZIw2'>Billabong Bogans</a>, <a href='https://vrmasterleague.com/Pavlov/Teams/seN3AsO3pSN7QBE7RbUnHg2'>Royalty</a>, &amp; <a href='https://vrmasterleague.com/Pavlov/Teams/84IELfGbFfCN35MN1HwpFA2'>REKT</a> on winning in their respective regions! Congrats as well to all participating teams!</p><p>VODs: <a href='https://www.youtube.com/channel/UCvFZPtHVNsvryELC4zzySjQ' target='_blank'>https://www.youtube.com/channel/UCvFZPtHVNsvryELC4zzySjQ</a></p><p>Thanks to the volunteers casting &amp; moderating! If you want to get involved, application forms are available in Discord: <a href='https://discord.gg/G6T5JR9' target='_blank' style='color: rgb(27, 149, 224);'>discord.gg/G6T5JR9</a></p><p><br></p><p>A feedback survey will be released soon to prepare for Season 9. Make your opinions known!</p><p>Thanks to Davevillz &amp; Vankrupt Games! Join the official Pavlov Discord for game updates and community events: <a href='https://discord.gg/pavlov-vr' target='_blank' style='color: rgb(27, 149, 224);'>discord.gg/pavlov-vr</a></p><p><br></p><p>Thanks to our Season 8 sponsors <a href='https://hyperxgaming.com/' target='_blank' style='color: rgb(27, 149, 224);'>HyperX</a>, <a href='https://www.protubevr.com/' target='_blank' style='color: rgb(27, 149, 224);'>ProTubeVR</a>, &amp; <a href='https://www.asterionproducts.com/' target='_blank' style='color: rgb(27, 149, 224);'>Asterion Products</a> for your unwavering support and contributing to the $5,760 prize pool and over $600 in giveaways!</p><p>See you next season!</p><p><img src='/images/news/ac8c9a7e-0c3e-42ea-ab1e-f7261b70256a.png'></p>"
+        },
+        {
+            "newsID": "xAXq6_fCuD4Zd7cymg-Q_w2",
+            "userID": "XiH6YTksoXqg64BSAYOL9g2",
+            "userLogo": "/images/logos/users/9fea974e-4623-465f-a111-96fd7c7179a7.png",
+            "userName": "Giligin",
+            "dateSubmittedUTC": "2021-08-16 21:12",
+            "dateEditedUTC": null,
+            "title": "Roadmap to the Championship",
+            "html": "<p>We're pleased to announce that registration is open for the Pavlov VRML Season 8 NA, EU, and APAC Challenger Cup, and the information, schedule, and prize pools for all 3 Regional Championships is now online!</p><p>Check it out <a href='https://vrmasterleague.com/Pavlov/Championships/Season8/'>here</a>!</p><p><br></p><p>If your team is eligible to compete, sign up through the 'My Teams' page on the VRML website!</p><p><img src='/images/news/5aec343a-7698-4fa2-bea7-a8c8ce4e96d3.jpg'></p>"
+        }
+    ],
+    "nextMatches": [
+        {
+            "matchID": "FI9apzTaQikbOssan-G9jw2",
+            "homeTeam": {
+                "divisionName": "Silver",
+                "divisionLogo": "/images/div_silver.png",
+                "teamID": "btvGn0hsaWnwNJl__7uCbA2",
+                "teamName": "The 8-Basils",
+                "teamLogo": "/images/logos/teams/3c2509b1-a27c-4854-a969-7a7ac54cebe4.png",
+                "regionID": "tkP9axaslI7i3dnSQXOJUQ2",
+                "regionName": "America East"
+            },
+            "awayTeam": {
+                "divisionName": "Bronze",
+                "divisionLogo": "/images/div_bronze.png",
+                "teamID": "gDxavfkYSaeBw8Vqtjjmhw2",
+                "teamName": "FLYING KIWIS",
+                "teamLogo": "/images/logos/teams/bb0b42a5-b903-4609-9732-9c7e2970c239.png",
+                "regionID": "S8_q2GN7Kkvu6C0dCdMBsg2",
+                "regionName": "America West"
+            },
+            "scoreHome": "-",
+            "scoreAway": "-",
+            "isTie": false,
+            "isForfeit": false,
+            "winningTeamID": null,
+            "losingTeamID": null,
+            "casterUsername": null,
+            "casterUsername2": null,
+            "casterCameramanUsername": null,
+            "dateScheduledUTC": "2022-08-13 00:00",
+            "dateScheduledUser": null,
+            "dateScheduledUserTimezone": null
+        },
+        {
+            "matchID": "-LcTOAxq9jb3EhfXh4q4Zw2",
+            "homeTeam": {
+                "divisionName": "Bronze",
+                "divisionLogo": "/images/div_bronze.png",
+                "teamID": "U4qK1sjSPmSDVooNg82M4g2",
+                "teamName": "Homeland Esport",
+                "teamLogo": "/images/logos/teams/8c168211-4a7b-4a7b-8c03-44af6775534c.png",
+                "regionID": "tkP9axaslI7i3dnSQXOJUQ2",
+                "regionName": "America East"
+            },
+            "awayTeam": {
+                "divisionName": "Silver",
+                "divisionLogo": "/images/div_silver.png",
+                "teamID": "iUUl2MnprgiLfuvi7ffd0Q2",
+                "teamName": "Octane",
+                "teamLogo": "/images/logos/teams/95abfe27-dae6-476f-8383-fca0c593d32d.png",
+                "regionID": "tkP9axaslI7i3dnSQXOJUQ2",
+                "regionName": "America East"
+            },
+            "scoreHome": "-",
+            "scoreAway": "-",
+            "isTie": false,
+            "isForfeit": false,
+            "winningTeamID": null,
+            "losingTeamID": null,
+            "casterUsername": null,
+            "casterUsername2": null,
+            "casterCameramanUsername": null,
+            "dateScheduledUTC": "2022-08-13 01:30",
+            "dateScheduledUser": null,
+            "dateScheduledUserTimezone": null
+        },
+        {
+            "matchID": "8sEKUo1XVxRdAsZBTLGMzQ2",
+            "homeTeam": {
+                "divisionName": "Bronze",
+                "divisionLogo": "/images/div_bronze.png",
+                "teamID": "qjwHZMugLEbCSRskAOYZOw2",
+                "teamName": "Spirit Gaming",
+                "teamLogo": "/images/logos/teams/8845e611-80bd-44d6-be73-0e295395d316.png",
+                "regionID": "7anlgNO-mU0-KcHJH27SSQ2",
+                "regionName": "Europe"
+            },
+            "awayTeam": {
+                "divisionName": "Bronze",
+                "divisionLogo": "/images/div_bronze.png",
+                "teamID": "8TTYiUhD_rcrWZoJk2EwaQ2",
+                "teamName": "Pixel",
+                "teamLogo": "/images/logos/teams/e3ceb020-a314-4e6e-9541-c07e9be08ba4.png",
+                "regionID": "7anlgNO-mU0-KcHJH27SSQ2",
+                "regionName": "Europe"
+            },
+            "scoreHome": "-",
+            "scoreAway": "-",
+            "isTie": false,
+            "isForfeit": false,
+            "winningTeamID": null,
+            "losingTeamID": null,
+            "casterUsername": null,
+            "casterUsername2": null,
+            "casterCameramanUsername": null,
+            "dateScheduledUTC": "2022-08-13 18:00",
+            "dateScheduledUser": null,
+            "dateScheduledUserTimezone": null
+        },
+        {
+            "matchID": "yYbGecMnftchm5M5qglWhQ2",
+            "homeTeam": {
+                "divisionName": "Bronze",
+                "divisionLogo": "/images/div_bronze.png",
+                "teamID": "gDxavfkYSaeBw8Vqtjjmhw2",
+                "teamName": "FLYING KIWIS",
+                "teamLogo": "/images/logos/teams/bb0b42a5-b903-4609-9732-9c7e2970c239.png",
+                "regionID": "S8_q2GN7Kkvu6C0dCdMBsg2",
+                "regionName": "America West"
+            },
+            "awayTeam": {
+                "divisionName": "Silver",
+                "divisionLogo": "/images/div_silver.png",
+                "teamID": "H_66wnGXonASD0FpKHxiTw2",
+                "teamName": "Dream Team",
+                "teamLogo": "/images/logos/teams/b187a243-d167-4531-ab08-9877df45b97f.png",
+                "regionID": "tkP9axaslI7i3dnSQXOJUQ2",
+                "regionName": "America East"
+            },
+            "scoreHome": "-",
+            "scoreAway": "-",
+            "isTie": false,
+            "isForfeit": false,
+            "winningTeamID": null,
+            "losingTeamID": null,
+            "casterUsername": null,
+            "casterUsername2": null,
+            "casterCameramanUsername": null,
+            "dateScheduledUTC": "2022-08-14 01:00",
+            "dateScheduledUser": null,
+            "dateScheduledUserTimezone": null
+        },
+        {
+            "matchID": "ooSQ19XJD3Zri6Uu93hyFQ2",
+            "homeTeam": {
+                "divisionName": "Silver",
+                "divisionLogo": "/images/div_silver.png",
+                "teamID": "TSLIf5IOwq3I---30lwUJw2",
+                "teamName": "DEFCON",
+                "teamLogo": "/images/logos/teams/618808e4-f979-4e50-bf41-ddb29d8b0273.png",
+                "regionID": "tkP9axaslI7i3dnSQXOJUQ2",
+                "regionName": "America East"
+            },
+            "awayTeam": {
+                "divisionName": "Bronze",
+                "divisionLogo": "/images/div_bronze.png",
+                "teamID": "w_SHOw2gMxYGgw4uPQ9Fgg2",
+                "teamName": "Night Shift",
+                "teamLogo": "/images/logos/teams/476825e0-cc0c-4ee5-81db-81c65100c3d9.jpeg",
+                "regionID": "S8_q2GN7Kkvu6C0dCdMBsg2",
+                "regionName": "America West"
+            },
+            "scoreHome": "-",
+            "scoreAway": "-",
+            "isTie": false,
+            "isForfeit": false,
+            "winningTeamID": null,
+            "losingTeamID": null,
+            "casterUsername": null,
+            "casterUsername2": null,
+            "casterCameramanUsername": null,
+            "dateScheduledUTC": "2022-08-14 01:00",
+            "dateScheduledUser": null,
+            "dateScheduledUserTimezone": null
+        },
+        {
+            "matchID": "YUjvhSfF5Kl712QjrHgf9A2",
+            "homeTeam": {
+                "divisionName": "Gold",
+                "divisionLogo": "/images/div_gold.png",
+                "teamID": "UVfp4LBN1fXeoHMg8tBdUw2",
+                "teamName": "Jabberwocky",
+                "teamLogo": "/images/logos/teams/c2fc8b85-2524-4a3d-a24e-a518e00614f6.png",
+                "regionID": "tkP9axaslI7i3dnSQXOJUQ2",
+                "regionName": "America East"
+            },
+            "awayTeam": {
+                "divisionName": "Silver",
+                "divisionLogo": "/images/div_silver.png",
+                "teamID": "H_66wnGXonASD0FpKHxiTw2",
+                "teamName": "Dream Team",
+                "teamLogo": "/images/logos/teams/b187a243-d167-4531-ab08-9877df45b97f.png",
+                "regionID": "tkP9axaslI7i3dnSQXOJUQ2",
+                "regionName": "America East"
+            },
+            "scoreHome": "-",
+            "scoreAway": "-",
+            "isTie": false,
+            "isForfeit": false,
+            "winningTeamID": null,
+            "losingTeamID": null,
+            "casterUsername": null,
+            "casterUsername2": null,
+            "casterCameramanUsername": null,
+            "dateScheduledUTC": "2022-08-15 00:00",
+            "dateScheduledUser": null,
+            "dateScheduledUserTimezone": null
+        },
+        {
+            "matchID": "OSLnl23lqoVVhAyd7Q91eQ2",
+            "homeTeam": {
+                "divisionName": "Master",
+                "divisionLogo": "/images/div_master.png",
+                "teamID": "84IELfGbFfCN35MN1HwpFA2",
+                "teamName": "Robo Electric Kitten Team",
+                "teamLogo": "/images/logos/teams/84dcb3f8-a350-43ce-9865-bf2b959fe061.png",
+                "regionID": "S8_q2GN7Kkvu6C0dCdMBsg2",
+                "regionName": "America West"
+            },
+            "awayTeam": {
+                "divisionName": "Silver",
+                "divisionLogo": "/images/div_silver.png",
+                "teamID": "AnhocBI5WFQNGhFBDQYR6Q2",
+                "teamName": "DownFall",
+                "teamLogo": "/images/logos/teams/2bda2a5e-d128-4c5c-8bff-4b2787ce0c92.png",
+                "regionID": "tkP9axaslI7i3dnSQXOJUQ2",
+                "regionName": "America East"
+            },
+            "scoreHome": "-",
+            "scoreAway": "-",
+            "isTie": false,
+            "isForfeit": false,
+            "winningTeamID": null,
+            "losingTeamID": null,
+            "casterUsername": null,
+            "casterUsername2": null,
+            "casterCameramanUsername": null,
+            "dateScheduledUTC": "2022-08-15 01:00",
+            "dateScheduledUser": null,
+            "dateScheduledUserTimezone": null
+        }
+    ],
+    "season": {
+        "dateStartUTC": "2022-06-20 00:00",
+        "dateEndUTC": "2022-10-30 00:00",
+        "dateChampionshipStartUTC": null,
+        "championshipUrl": null,
+        "seasonID": "A7MO_9hS0pmvoBtk_dq9zA2",
+        "seasonName": "Season 10 - 2022",
+        "isCurrent": true
+    }
+}
