@@ -2,7 +2,7 @@
 //
 //          █▀▄▀█   █▀█   █▄░█   █▄▀   █▀▀       █▄▄   █▀█   ▀█▀     █░█   ▀█
 //          █░▀░█   █▄█   █░▀█   █░█   ██▄       █▄█   █▄█   ░█░     ▀▄▀   █▄ 🦧
-//                           ( 🇼​​​​​ 🇴​​​​​ 🇷​​​​​ 🇰​​​​​  🇮​​​​​🇳​​​​​  🇵​​​​​ 🇷​​​​​ 🇴​​​​​ 🇬​​​​​ 🇷​​​​​ 🇪​​​​​ 🇸​​​​​ 🇸​​​​​)
+//                             ( 🇼​​​​​ 🇴​​​​​ 🇷​​​​​ 🇰​​​​​  🇮​​​​​🇳​​​​​  🇵​​​​​ 🇷​​​​​ 🇴​​​​​ 🇬​​​​​ 🇷​​​​​ 🇪​​​​​ 🇸​​​​​ 🇸​​​​​)
 //
 //
 
@@ -19,6 +19,7 @@ const { avavilabilityReactionsHandler } = require('./js/helpers/reactionCountHel
 const { DTAvailabilityLogging, logDeletedMessage } = require('./js/logging.js');
 const { getLatestDTAvailabilityMessageObject } = require('./js/helpers/getMessageIdFromContent.js');
 const { fetchUpcomingMatches } = require('./js/vrml-api/index.js');
+const { randomEmote } = require('./js/custom-emotes/emotes.js');
 
 //  :statics:
 const client = new Client({ partials: ["MESSAGE", "CHANNEL", "REACTION", "USER"], intents: ["GUILD_VOICE_STATES", "GUILDS", "GUILD_MEMBERS", "GUILD_MESSAGES", "GUILD_MESSAGE_REACTIONS"] });
@@ -35,7 +36,7 @@ const knownAvailbilityChannels = ["op-availability", "dt-availability", "octane-
   client.on("ready", () => {
 
     //  monke online message
-    sendMessageToChannel(client, "monke-bot", "Monke Bot V2 Ready")
+    sendMessageToChannel(client, "monke-bot", `Monke Bot V2 Ready ${randomEmote()}`)
 
     //  Set up button commands in monke-commands channel
     createMonkeCommandsbutton(client)
