@@ -1,6 +1,7 @@
 
 //  :code:
 const { getDiscordChannelObject, getListOfServerChannels } = require("../../helpers/channelHelpers")
+const { getHistoricalMatchStatsforSpecificTeam, getSpecifcTeamID } = require("../../vrml-api")
 
 
 const handleSlowModeSelectMenuInteration = (client, interaction) => {
@@ -74,5 +75,21 @@ const moveOctaneInteraction = (client, interaction) => {
   //  TODO: log interaction
 }
 
+const getHistoricalMatchStatsInteraction = async (interaction) => {
+  
+  console.log("[TALK] getting team id function");
+  const teamID = await getSpecifcTeamID(interaction.values[0])
 
-module.exports = { handleSlowModeSelectMenuInteration, handleClearSlowModeInteraction, moveOctaneInteraction }
+  console.log("[TALK] getting historical match stats function");
+  const historicalMatchStats = await getHistoricalMatchStatsforSpecificTeam(teamID)
+  console.log(historicalMatchStats);
+
+  //  :TODO: Format returned data and send to user
+
+
+  interaction.deferUpdate("true")
+  interaction.user.send(`OK`)
+}
+
+
+module.exports = { handleSlowModeSelectMenuInteration, handleClearSlowModeInteraction, moveOctaneInteraction, getHistoricalMatchStatsInteraction }

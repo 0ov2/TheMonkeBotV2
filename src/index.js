@@ -8,8 +8,8 @@ require('dotenv').config();
 
 //  :code:
 const { sendMessageToChannel, getDiscordChannelObject, getDiscordChannelID } = require("./js/helpers/channelHelpers.js")
-const { createMonkeCommandsbutton, createMoveOctaneButton } = require("./js/buttons/monke-commands");
-const { handleSlowModeSelectMenuInteration, handleClearSlowModeInteraction, moveOctaneInteraction } = require('./js/buttons/handler/button-interactions-handler.js');
+const { createMonkeCommandsbutton, createMoveOctaneButton, requestTeamStatsDropdown } = require("./js/buttons/monke-commands");
+const { handleSlowModeSelectMenuInteration, handleClearSlowModeInteraction, moveOctaneInteraction, getHistoricalMatchStatsInteraction } = require('./js/buttons/handler/button-interactions-handler.js');
 const { setUpAvailabilityCronJobs } = require('./js/cron-jobs/cronJobs.js');
 const { avavilabilityReactionsHandler } = require('./js/helpers/reactionCountHelper.js');
 const { DTAvailabilityLogging, logDeletedMessage } = require('./js/logging.js');
@@ -35,18 +35,19 @@ const knownAvailbilityChannels = ["op-availability", "dt-availability", "octane-
     //  Set up button commands in monke-commands channel
     createMonkeCommandsbutton(client)
     createMoveOctaneButton(client)
+    requestTeamStatsDropdown(client)
 
     //  Initialise CRON jobs
     setUpAvailabilityCronJobs(client)
 
     //  VRML api
-    fetchUpcomingMatches(client)
+    // fetchUpcomingMatches(client)
 
   })
 
 
   // Handle Button interations
-  client.on('interactionCreate', interaction => {
+  client.on('interactionCreate', async (interaction) => {
 
     //  Slow mode interactions
     if (interaction.isSelectMenu() && interaction.customId === "slow-mode") {
@@ -59,6 +60,13 @@ const knownAvailbilityChannels = ["op-availability", "dt-availability", "octane-
 
     if (interaction.isButton() && interaction.customId === "move-octane") {
       moveOctaneInteraction(client, interaction)
+    }
+
+
+    //  Match stats
+    if (interaction.customId === "match-stats-eu" || interaction.customId === "match-stats-na") {
+      console.log("[TALK] match stats requested");
+      await getHistoricalMatchStatsInteraction(interaction)
     }
 
   })
