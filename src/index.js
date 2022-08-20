@@ -1,5 +1,9 @@
 //
-//     M O N K E  B O T  V 2
+//
+//          █▀▄▀█   █▀█   █▄░█   █▄▀   █▀▀     █▄▄   █▀█   ▀█▀     █░█   ▀█
+//          █░▀░█   █▄█   █░▀█   █░█   ██▄     █▄█   █▄█   ░█░     ▀▄▀   █▄
+//                           ( 🇼​​​​​ 🇴​​​​​ 🇷​​​​​ 🇰​​​​​  🇮​​​​​🇳​​​​​  🇵​​​​​ 🇷​​​​​ 🇴​​​​​ 🇬​​​​​ 🇷​​​​​ 🇪​​​​​ 🇸​​​​​ 🇸​​​​​)
+//
 //
 
 //  :packages:
@@ -19,6 +23,7 @@ const { fetchUpcomingMatches } = require('./js/vrml-api/index.js');
 //  :statics:
 const client = new Client({ partials: ["MESSAGE", "CHANNEL", "REACTION", "USER"], intents: ["GUILD_VOICE_STATES", "GUILDS", "GUILD_MEMBERS", "GUILD_MESSAGES", "GUILD_MESSAGE_REACTIONS"] });
 const knownAvailbilityChannels = ["op-availability", "dt-availability", "octane-avilability"];
+
 
 //  runtime
 (() => {
@@ -111,4 +116,3 @@ const knownAvailbilityChannels = ["op-availability", "dt-availability", "octane-
     logDeletedMessage(message, client)
   })
 })()
-
