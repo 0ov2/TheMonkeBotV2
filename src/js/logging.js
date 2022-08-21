@@ -44,7 +44,7 @@ const logDeletedMessage = async (message, client) => {
   
   const executor = auditLogs.executor.username || "No executor found"
   const deletedMessageAuthor = auditLogs.target.username || "No author found"
-  const channel = auditLogs.extra.channel.name || "No channel found"
+  const channel = auditLogs.extra.channel.name !== null ? auditLogs.extra.channel.name :  "No channel found"
   const messageContent = message.content || "No message content"
   const attachments = []
 

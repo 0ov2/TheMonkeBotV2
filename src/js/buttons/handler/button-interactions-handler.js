@@ -1,6 +1,7 @@
 
 //  :code:
 const { getDiscordChannelObject, getListOfServerChannels } = require("../../helpers/channelHelpers")
+const { formatHistoricalMapStats } = require("../../helpers/messageFormatting")
 const { getHistoricalMatchStatsforSpecificTeam, getSpecifcTeamID } = require("../../vrml-api")
 
 
@@ -76,19 +77,21 @@ const moveOctaneInteraction = (client, interaction) => {
 }
 
 const getHistoricalMatchStatsInteraction = async (interaction) => {
+  const teamToSearchFor = interaction.values[0]
   
-  console.log("[TALK] getting team id function");
-  const teamID = await getSpecifcTeamID(interaction.values[0])
+  console.log("[TALK] Getting Team ID");
+  const teamID = await getSpecifcTeamID(teamToSearchFor)
 
-  console.log("[TALK] getting historical match stats function");
+  console.log("[TALK] Getting Historical Match Stats");
   const historicalMatchStats = await getHistoricalMatchStatsforSpecificTeam(teamID)
-  console.log(historicalMatchStats);
 
-  //  :TODO: Format returned data and send to user
+  console.log("[TALK] Formatting Historical Map Stats");
+  const formattedHistoricalMapStats = formatHistoricalMapStats(historicalMatchStats, teamToSearchFor)
 
+  console.log("[TALK] Now Sending Historical Map Stats");
+  interaction.user.send(formattedHistoricalMapStats)
 
   interaction.deferUpdate("true")
-  interaction.user.send(`OK`)
 }
 
 

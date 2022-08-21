@@ -7,10 +7,10 @@ const randomEmote = () => {
     let emote = STATIC_EMOTES[Math.floor(Math.random() * 10)]
 
     while(emote === undefined){
-        emote = STATIC_EMOTES[Math.floor(Math.random() * 10)]
+        emote = STATIC_EMOTES[Math.floor(Math.random() * 5)]
     }
 
-    return emote !== undefined ? emote : ""
+    return emote;
 }
 
 module.exports = {
