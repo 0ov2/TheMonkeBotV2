@@ -2,7 +2,7 @@
 //
 //          █▀▄▀█   █▀█   █▄░█   █▄▀   █▀▀       █▄▄   █▀█   ▀█▀     █░█   ▀█
 //          █░▀░█   █▄█   █░▀█   █░█   ██▄       █▄█   █▄█   ░█░     ▀▄▀   █▄ 🦧
-//                             ( 🇼​​​​​ 🇴​​​​​ 🇷​​​​​ 🇰​​​​​  🇮​​​​​🇳​​​​​  🇵​​​​​ 🇷​​​​​ 🇴​​​​​ 🇬​​​​​ 🇷​​​​​ 🇪​​​​​ 🇸​​​​​ 🇸​​​​​)
+//                             ( 🇼​​​​​ 🇴​​​​​ 🇷​​​​​ 🇰​​​​​  🇮​​​​​🇳​​​​​  🇵​​​​​ 🇷​​​​​ 🇴​​​​​ 🇬​​​​​ 🇷​​​​​ 🇪​​​​​ 🇸​​​​​ 🇸​​​​​ )
 //
 //
 
@@ -18,7 +18,7 @@ const { setUpAvailabilityCronJobs } = require('./js/cron-jobs/cronJobs.js');
 const { avavilabilityReactionsHandler } = require('./js/helpers/reactionCountHelper.js');
 const { DTAvailabilityLogging, logDeletedMessage } = require('./js/logging.js');
 const { getLatestDTAvailabilityMessageObject } = require('./js/helpers/getMessageIdFromContent.js');
-const { fetchUpcomingMatches } = require('./js/vrml-api/index.js');
+const { fetchUpcomingMatches, oldPepleMatchAnnouncement } = require('./js/vrml-api/index.js');
 const { randomEmote } = require('./js/custom-emotes/emotes.js');
 
 //  :statics:
@@ -46,14 +46,16 @@ const knownAvailbilityChannels = ["op-availability", "dt-availability", "octane-
     //  Initialise CRON jobs
     setUpAvailabilityCronJobs(client)
 
-    //  VRML api
-    // fetchUpcomingMatches(client)
+    //  :TODO: set up cron job if OP match is today
+    oldPepleMatchAnnouncement(client)
 
   })
 
 
   // Handle Button interations
   client.on('interactionCreate', async (interaction) => {
+    const userObject = interaction.user
+    const interactionValue = interaction.values[0]
 
     //  Slow mode interactions
     if (interaction.isSelectMenu() && interaction.customId === "slow-mode") {
@@ -68,13 +70,11 @@ const knownAvailbilityChannels = ["op-availability", "dt-availability", "octane-
       moveOctaneInteraction(client, interaction)
     }
 
-
     //  Match stats
     if (interaction.customId === "match-stats-eu" || interaction.customId === "match-stats-na") {
-      console.log("[TALK] match stats requested");
+      console.log(`[TALK] ${userObject.username} Requested Match Stats for ${interactionValue}`);
       await getHistoricalMatchStatsInteraction(interaction)
     }
-
   })
 
   //  handle message reactions

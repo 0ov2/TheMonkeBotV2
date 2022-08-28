@@ -77,6 +77,7 @@ const moveOctaneInteraction = (client, interaction) => {
 }
 
 const getHistoricalMatchStatsInteraction = async (interaction) => {
+  const user = interaction.user
   const teamToSearchFor = interaction.values[0]
   
   console.log("[TALK] Getting Team ID");
@@ -85,11 +86,11 @@ const getHistoricalMatchStatsInteraction = async (interaction) => {
   console.log("[TALK] Getting Historical Match Stats");
   const historicalMatchStats = await getHistoricalMatchStatsforSpecificTeam(teamID)
 
-  console.log("[TALK] Formatting Historical Map Stats");
+  console.log("[TALK] Formatting Historical Match Stats");
   const formattedHistoricalMapStats = formatHistoricalMapStats(historicalMatchStats, teamToSearchFor)
 
-  console.log("[TALK] Now Sending Historical Map Stats");
-  interaction.user.send(formattedHistoricalMapStats)
+  console.log(`[TALK] Now Sending ${teamToSearchFor} Historical Match Stats To ${user.username}`);
+  user.send(formattedHistoricalMapStats)
 
   interaction.deferUpdate("true")
 }

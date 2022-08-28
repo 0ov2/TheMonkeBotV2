@@ -10,142 +10,80 @@ const { MessageEmbed } = require('discord.js');
 //  :code:
 const { getDiscordChannelObject } = require("../helpers/channelHelpers");
 const { getSpecificRoleByName } = require("../helpers/roleHelpers");
+const { matchAnnouncementCronJob } = require("../cron-jobs/cronJobs");
 
 //
 //  :statics:
-const teamToSearchFor = "Compashka"
+const teamToSearchFor = "PLants"
 
-const fetchUpcomingMatches = async (client) => {
-  const oldPeopleAnnouncementsChannel = getDiscordChannelObject(client, "op-match-announcements")
+const oldPepleMatchAnnouncement = async (client) => {
   const OPRolesObject = getSpecificRoleByName(client, "op")
-
-  let upcomingMatchesResponse = null
-  let matchObject = null
-  let opponentTeamId = null
-  let seasonStatsMaps = null
-  let mapStatsMessage = "OPPONENT MAP STATS: \n"
-  let matchStructuredObject = {
-    matchDate: "",
-    homeTeam: {
-      teamName: "",
-      teamLogo: "",
-      teamID: ""
-    },
-    awayTeam: {
-      teamName: "",
-      teamLogo: "",
-      teamID: ""
-    }
-  }
-  let opponentMatchHistory = {}
-
-  //  request upcoming matches from VRML api
-  await axios.get("https://api.vrmasterleague.com/pavlov/matches/upcoming")
-    .then((response) => upcomingMatchesResponse = response.data)
-    .catch((error) => console.log(error))
-
-
-  //  form our data structure with relevent information for later use
-  upcomingMatchesResponse.every(object => {
-    if (object.homeTeam.teamName === teamToSearchFor || object.awayTeam.teamName === teamToSearchFor) {
-      matchObject = object // need?
-      matchStructuredObject.matchDate = object.dateScheduledUTC
-
-      matchStructuredObject.homeTeam.teamName = object.homeTeam.teamName
-      matchStructuredObject.homeTeam.teamLogo = object.homeTeam.teamLogo
-      matchStructuredObject.homeTeam.teamID = object.homeTeam.teamID
-
-      matchStructuredObject.awayTeam.teamName = object.awayTeam.teamName
-      matchStructuredObject.awayTeam.teamLogo = object.awayTeam.teamLogo
-      matchStructuredObject.awayTeam.teamID = object.awayTeam.teamID
-
-      if (object.homeTeam.teamName === teamToSearchFor) {
-        opponentTeamId = object.awayTeam.teamID
-      } else {
-        opponentTeamId = object.homeTeam.teamID
+  let matchDate = null
+  let opponentID = null
+  let homeTeamName = null
+  let awayTeamName = null
+  //
+  //  :step 1:
+  //  request the upcoming VRML matches
+  const upcomingMatchesArray = await fetchUpcomingMatches()
+  if (!upcomingMatchesArray) { return console.log("[oldPepleMatchAnnouncement][TALK] Could not get upcoming matches"); }
+  //  
+  //  :step 2:
+  //  loop through the upcoming matches array
+  upcomingMatchesArray.every((match) => {
+    homeTeamName = match.homeTeam.teamName
+    awayTeamName = match.awayTeam.teamName
+    if (homeTeamName === teamToSearchFor || awayTeamName === teamToSearchFor) {
+      matchDate = match.dateScheduledUTC
+      //  
+      //  :step 3:
+      //  if we find the team we are looking for, store the opponents team id for later use
+      if (homeTeamName === teamToSearchFor) {
+        opponentID = match.awayTeam.teamID
+        return false
       }
-
-      return false;
+      if (awayTeamName === teamToSearchFor) {
+        opponentID = match.homeTeam.teamID
+        return false
+      }
+      
     }
     return true;
-  });
+  })
 
-  if (!matchStructuredObject) { return; }
+  if (!opponentID) { return console.log("[TALK] No upcoming match for the specific team"); }
 
+  //  
+  //  :step 4:
+  //  get the historical match stats for the opponent team
+  const historicalMatchStatsForOpponentTeam = await getHistoricalMatchStatsforSpecificTeam(opponentID)
+  if (!historicalMatchStatsForOpponentTeam) { return console.log(`[TALK] Could not get historical match stats for team ID ${opponentID}`); }
 
-  // https://api.vrmasterleague.com/Teams/TSLIf5IOwq3I---30lwUJw2/Matches/History/Detailed
-  await axios.get(`https://api.vrmasterleague.com/Teams/${opponentTeamId}/Matches/History/Detailed`)
-    .then((response) => {
-      response.data.every(matchObject => {
-        if (matchObject.seasonName.includes('Season 10')) {
-          if (!opponentMatchHistory[matchObject.dateScheduledUTC]) {
-            opponentMatchHistory[matchObject.dateScheduledUTC] = {}
-          }
+  //  
+  //  :step 5:
+  //  convert the match time to the format we need
+  //  :TODO: convert the milliseconds epoch time to epoch seconds 
+  const convertedMatchDateTime = spacetime(matchDate, "UTC").goto('Europe/London').epoch / 1000
 
-          //  initalise the objects we are going to use
-          opponentMatchHistory[matchObject.dateScheduledUTC].homeTeam = {}
-          opponentMatchHistory[matchObject.dateScheduledUTC].awayTeam = {}
-          opponentMatchHistory[matchObject.dateScheduledUTC].homeTeam.picks = {}
-          opponentMatchHistory[matchObject.dateScheduledUTC].awayTeam.picks = {}
+  //  
+  //  :step 6:
+  //  for the message we will send
+  const messageToSend = `
+  ${OPRolesObject} **MATCH DAY** ${homeTeamName} VS ${awayTeamName}, Starting - <t:${convertedMatchDateTime}:R> <t:${convertedMatchDateTime}:t>`
 
-          //  team names
-          opponentMatchHistory[matchObject.dateScheduledUTC].homeTeam.team = matchObject.homeTeam.teamName
-          opponentMatchHistory[matchObject.dateScheduledUTC].awayTeam.team = matchObject.awayTeam.teamName
+  //
+  //  :step 7:
+  //  send the message
+  matchAnnouncementCronJob(client, messageToSend, "op-match-announcements")
 
-          //  team picks
-          opponentMatchHistory[matchObject.dateScheduledUTC].homeTeam.picks[matchObject.mapsSet[0].mapName] = {
-            homeScore: matchObject.mapsSet[0].homeScore,
-            awayScore: matchObject.mapsSet[0].awayScore
-          }
-          opponentMatchHistory[matchObject.dateScheduledUTC].homeTeam.picks[matchObject.mapsSet[2].mapName] = {
-            homeScore: matchObject.mapsSet[2].homeScore,
-            awayScore: matchObject.mapsSet[2].awayScore
-          }
-          opponentMatchHistory[matchObject.dateScheduledUTC].awayTeam.picks[matchObject.mapsSet[1].mapName] = {
-            homeScore: matchObject.mapsSet[1].homeScore,
-            awayScore: matchObject.mapsSet[1].awayScore
-          }
-        }
-        return true;
-      })
+}
 
-    }).catch((err) => console.log(err))
-
-  console.log(opponentMatchHistory);
-
-
-  //  request opponent stats
-  // await axios.get(`https://api.vrmasterleague.com/Teams/${opponentTeamId}`)
-  //   .then((response) => upcomingMatchesResponse = seasonStatsMaps = response.data.seasonStatsMaps)
-  //   .catch((error) => console.log(error))
-
-  // if (!matchStructuredObject) { return; }
-  // const convertedMatchDateTime = spacetime(matchStructuredObject.matchDate, "UTC").goto('Europe/London').epoch / 1000
-  // const s = spacetime(matchStructuredObject.matchDate, "UTC").goto('Europe/London').hour(9)
-
-  // seasonStatsMaps.every(object => {
-  //   mapStatsMessage += `
-  //   **${object.mapName}** Amount Played - ${object.played} Wins - ${object.win} Win Percentage - ${object.winPercentage} Round Win Percentage - ${object.roudsWinPercentage || object.roundsWinPercentage}`
-  //   return true
-  // })
-
-  //  TODO: form a structure object so we can easily use it here, must include the oppoents team id and map states
-  // const opponentMapStatsEmbed = new MessageEmbed()
-  // .setColor("ORANGE")
-  // .setTitle("Slow Mode")
-  // .setDescription("**OPPONENT MAP STATS**")
-
-  //  Send the embed
-  // await oldPeopleAnnouncementsChannel.send({embeds: [opponentMapStatsEmbed]})
-
-
-
-  // const messageToSend = `
-  // ${OPRolesObject} **MATCH DAY** ${matchStructuredObject.homeTeam.teamName} VS ${matchStructuredObject.awayTeam.teamName}, Starting - <t:${convertedMatchDateTime}:R> <t:${convertedMatchDateTime}:t>\n${mapStatsMessage}`
-
-
-  // await oldPeopleAnnouncementsChannel.send(messageToSend)
-
+const fetchUpcomingMatches = async () => {
+  return new Promise((resolve, reject) => {
+    axios.get("https://api.vrmasterleague.com/pavlov/matches/upcoming")
+      .then((response) => resolve(response.data))
+      .catch((error) => reject(error))
+  })
 }
 
 const getCurrentListOfVrmlTeams = async () => {
@@ -245,4 +183,4 @@ const getHistoricalMatchStatsforSpecificTeam = async (teamId) => {
 }
 
 
-module.exports = { fetchUpcomingMatches, getCurrentListOfVrmlTeams, getSpecifcTeamID, getHistoricalMatchStatsforSpecificTeam }
+module.exports = { fetchUpcomingMatches, getCurrentListOfVrmlTeams, getSpecifcTeamID, getHistoricalMatchStatsforSpecificTeam, oldPepleMatchAnnouncement }
