@@ -25,7 +25,6 @@ const { randomEmote } = require('./js/custom-emotes/emotes.js');
 const client = new Client({ partials: ["MESSAGE", "CHANNEL", "REACTION", "USER"], intents: ["GUILD_VOICE_STATES", "GUILDS", "GUILD_MEMBERS", "GUILD_MESSAGES", "GUILD_MESSAGE_REACTIONS"] });
 const knownAvailbilityChannels = ["op-availability", "dt-availability", "octane-avilability"];
 
-
 //  runtime
 (() => {
 
