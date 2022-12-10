@@ -27,4 +27,4 @@ const setUpAvailabilityCronJobs = (client) => {
 //   })
 // }
 
-module.exports = { setUpAvailabilityCronJobs, matchAnnouncementCronJob }
+module.exports = { setUpAvailabilityCronJobs }
