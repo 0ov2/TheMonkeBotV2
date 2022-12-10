@@ -33,39 +33,24 @@ const DTAvailabilityLogging = async (client, reaction, user, option) => {
 //  :TODO: Needs more testing
 //  No message content for older messages
 const logDeletedMessage = async (message, client) => {
-
   const messageDeletedAt = spacetime.now('America/New_York').unixFmt('yyyy.MM.dd h:mm a');
   const deletedMessageCreatedAt = spacetime(message.createdAt).goto('America/New_York').unixFmt('yyyy.MM.dd h:mm a');
 
-  const auditLogs = await message.guild.fetchAuditLogs()
-    .then(deletedMessage => deletedMessage.entries.first())
-    .catch(error => console.log(error))
-    //  :TODO: better error handling
+  await sleep(3000);
+  const auditLogs = await getAuditlogs(message)
   
-  // super safe 
   let executor = "No executor found"
   let deletedMessageAuthor = "No author found"
-  let channel = "No channel found"
+  let deletedFromChannel = "No channel found"
   let messageContent = "No message content"
   let attachments = []
-
+  
+  // super safe 
   // audit logs
   if (auditLogs){
-    if (auditLogs.target){
-      if (auditLogs.target.username){
-        deletedMessageAuthor = auditLogs.target.username;
-      }
-    }
     if (auditLogs.executor){
       if (auditLogs.executor.username){
         executor = auditLogs.executor.username;
-      }
-    }
-    if (auditLogs.extra){
-      if (auditLogs.extra.channel){
-        if (auditLogs.extra.channel.name){
-          channel = auditLogs.extra.channel.name;
-        }
       }
     }
   }
@@ -78,6 +63,16 @@ const logDeletedMessage = async (message, client) => {
     if (message.attachments.length > 0){
       message.attachments.map(attachment => attachments.push(attachment.url))
     }
+    if (message.author){
+      if (message.author.username){
+        deletedMessageAuthor = message.author.username;
+      }
+    }
+    if (message.channelId){
+      await client.channels.fetch(message.channelId)
+      .then(channel => deletedFromChannel = channel.name)
+      .catch(console.error);
+    }
   }
 
   const deletedMessageEmebed = {
@@ -86,7 +81,7 @@ const logDeletedMessage = async (message, client) => {
     fields: [
       { name: 'Message Content', value: messageContent },
       { name: 'Message Author', value: deletedMessageAuthor },
-      { name: 'Channel', value: channel },
+      { name: 'Channel', value: deletedFromChannel },
       { name: 'Deleted By', value: executor },
       { name: 'Attachments (click at your own risk)', value: getAttachments(attachments) },
       { name: 'Message Created', value: deletedMessageCreatedAt},
@@ -106,6 +101,21 @@ const getAttachments = (array) => {
   array.map(attachment => attachmentsMessage = attachmentsMessage + `${attachment}, `)
 
   return attachmentsMessage;
+}
+
+const getAuditlogs = async (message) => {
+  return new Promise((resolve) => {
+    message.guild.fetchAuditLogs({limit: 1, type: "MESSAGE_DELETE"})
+      .then(deletedMessage => resolve(deletedMessage.entries.first()))
+      .catch(error => console.log(error))
+      //  :TODO: better error handling
+  })
+}
+
+const sleep = (ms) => {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  })
 }
 
 module.exports = { DTAvailabilityLogging, logDeletedMessage }

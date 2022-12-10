@@ -6,8 +6,6 @@ const { sendMessageToChannel } = require('../helpers/channelHelpers');
 //  :code:
 const { OPAvailabilityMessage, DTAvailabilityMessage, OctaneAvailabilityMessage } = require('./availabilities-messages/availabilities');
 
-
-
 const setUpAvailabilityCronJobs = (client) => {
 
   //  OP availability

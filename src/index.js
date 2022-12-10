@@ -7,7 +7,7 @@
 //
 
 //  :packages:
-const { Client, EmbedBuilder } = require('discord.js');
+const { Client } = require('discord.js');
 require('dotenv').config();
 
 //  :code:
@@ -110,7 +110,7 @@ const knownAvailbilityChannels = ["op-availability", "dt-availability", "octane-
   })
 
   client.on("messageDelete", async (message) => {
-    logDeletedMessage(message, client)
+    logDeletedMessage(message, client, AuditLogEvent)
   })
 })()
 
