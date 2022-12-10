@@ -26,95 +26,90 @@ const client = new Client({ partials: ["MESSAGE", "CHANNEL", "REACTION", "USER"]
 const knownAvailbilityChannels = ["op-availability", "dt-availability", "octane-avilability"];
 
 //  runtime
-(() => {
-  //  listen for bot online
-  client.on("ready", () => {
+//  listen for bot online
+client.on("ready", () => {
 
-    //  monke online message
-    sendMessageToChannel(client, "monke-bot", `Monke Bot V2 Ready ${randomEmote()}`)
+  //  monke online message
+  sendMessageToChannel(client, "monke-bot", `Monke Bot V2 Ready ${randomEmote()}`)
 
-    //  Set up button commands in monke-commands channel
-    // createMonkeCommandsbutton(client)
+  //  Set up button commands in monke-commands channel
+  // createMonkeCommandsbutton(client)
 
-    //
-    //  content needs to be < 2000 in length, maybe split the content in half if length > 2000
-    // requestTeamStatsDropdown(client)
+  //
+  //  content needs to be < 2000 in length, maybe split the content in half if length > 2000
+  // requestTeamStatsDropdown(client)
 
-    //  Initialise CRON jobs
-    setUpAvailabilityCronJobs(client)
+  //  Initialise CRON jobs
+  setUpAvailabilityCronJobs(client)
 
-    //  :TODO: set up cron job if OP match is today
-    // oldPepleMatchAnnouncement(client)
+  //  :TODO: set up cron job if OP match is today
+  // oldPepleMatchAnnouncement(client)
 
-  })
+})
 
 
-  // Handle Button interations
-  client.on('interactionCreate', async (interaction) => {
-    const userObject = interaction.user
-    const interactionValue = interaction.values[0]
+// Handle Button interations
+client.on('interactionCreate', async (interaction) => {
+  const userObject = interaction.user
+  const interactionValue = interaction.values[0]
 
-    //  Slow mode interactions
-    if (interaction.isSelectMenu() && interaction.customId === "slow-mode") {
-      handleSlowModeSelectMenuInteration(client, interaction)
+  //  Slow mode interactions
+  if (interaction.isSelectMenu() && interaction.customId === "slow-mode") {
+    handleSlowModeSelectMenuInteration(client, interaction)
+  }
+
+  if (interaction.isButton() && interaction.customId === "clear-slow-mode") {
+    handleClearSlowModeInteraction(client, interaction)
+  }
+
+  //  Match stats
+  if (interaction.customId === "match-stats-eu" || interaction.customId === "match-stats-na") {
+    console.log(`[TALK] ${userObject.username} Requested Match Stats for ${interactionValue}`);
+    await getHistoricalMatchStatsInteraction(interaction)
+  }
+})
+
+//  handle message reactions
+client.on("messageReactionAdd", async (reaction, user) => {
+
+  //  availability
+  if (knownAvailbilityChannels.includes(reaction.message.channel.name)) {
+    avavilabilityReactionsHandler(reaction, user)
+  }
+
+  //  logging DT sign up
+  const DTAvailabilitMessage = await getLatestDTAvailabilityMessageObject(client)
+  const DTAvailabilityChannelID = await getDiscordChannelID(client, "dt-availability")
+
+  if (reaction.message.channel.id === DTAvailabilityChannelID && !user.bot) {
+    if (reaction.message.id === DTAvailabilitMessage.id) {
+      await DTAvailabilityLogging(client, reaction, user, "reaction")
+    } else if (reaction.message.id != DTAvailabilitMessage.id) {
+      await DTAvailabilityLogging(client, reaction, user, "custom")
     }
+  }
+})
 
-    if (interaction.isButton() && interaction.customId === "clear-slow-mode") {
-      handleClearSlowModeInteraction(client, interaction)
+client.on("messageReactionRemove", async (reaction, user) => {
+
+  //  logging DT sign up
+  const DTAvailabilitMessage = await getLatestDTAvailabilityMessageObject(client)
+  const DTAvailabilityChannelID = await getDiscordChannelID(client, "dt-availability")
+
+  if (reaction.message.channel.id === DTAvailabilityChannelID && !user.bot) {
+    if (reaction.message.id === DTAvailabilitMessage.id) {
+      await DTAvailabilityLogging(client, reaction, user, "remove_reaction")
+    } else if (reaction.message.id != DTAvailabilitMessage.id) {
+      await DTAvailabilityLogging(client, reaction, user, "remove_custom")
     }
+  }
+})
 
-    //  Match stats
-    if (interaction.customId === "match-stats-eu" || interaction.customId === "match-stats-na") {
-      console.log(`[TALK] ${userObject.username} Requested Match Stats for ${interactionValue}`);
-      await getHistoricalMatchStatsInteraction(interaction)
-    }
-  })
+client.on("messageDelete", async (message) => {
+  logDeletedMessage(message, client, AuditLogEvent)
+})
 
-  //  handle message reactions
-  client.on("messageReactionAdd", async (reaction, user) => {
-
-    //  availability
-    if (knownAvailbilityChannels.includes(reaction.message.channel.name)) {
-      avavilabilityReactionsHandler(reaction, user)
-    }
-
-    //  logging DT sign up
-    const DTAvailabilitMessage = await getLatestDTAvailabilityMessageObject(client)
-    const DTAvailabilityChannelID = await getDiscordChannelID(client, "dt-availability")
-
-    if (reaction.message.channel.id === DTAvailabilityChannelID && !user.bot) {
-      if (reaction.message.id === DTAvailabilitMessage.id) {
-        await DTAvailabilityLogging(client, reaction, user, "reaction")
-      } else if (reaction.message.id != DTAvailabilitMessage.id) {
-        await DTAvailabilityLogging(client, reaction, user, "custom")
-      }
-    }
-  })
-
-  client.on("messageReactionRemove", async (reaction, user) => {
-
-    //  logging DT sign up
-    const DTAvailabilitMessage = await getLatestDTAvailabilityMessageObject(client)
-    const DTAvailabilityChannelID = await getDiscordChannelID(client, "dt-availability")
-
-    if (reaction.message.channel.id === DTAvailabilityChannelID && !user.bot) {
-      if (reaction.message.id === DTAvailabilitMessage.id) {
-        await DTAvailabilityLogging(client, reaction, user, "remove_reaction")
-      } else if (reaction.message.id != DTAvailabilitMessage.id) {
-        await DTAvailabilityLogging(client, reaction, user, "remove_custom")
-      }
-    }
-  })
-
-  client.on("messageDelete", async (message) => {
-    logDeletedMessage(message, client, AuditLogEvent)
-  })
-  
-  client.login(process.env.TOKEN);
-  keepAlive();
-})()
-
-
-
+client.login(process.env.TOKEN);
+keepAlive();
 
 // ( ͡° ͜ʖ ͡°( ಠ ͜ʖ ಠ ) ͡° ͜ʖ ͡°)
