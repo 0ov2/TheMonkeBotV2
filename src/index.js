@@ -19,6 +19,7 @@ const { avavilabilityReactionsHandler } = require('./js/helpers/reactionCountHel
 const { DTAvailabilityLogging, logDeletedMessage } = require('./js/logging.js');
 const { getLatestDTAvailabilityMessageObject } = require('./js/helpers/getMessageIdFromContent.js');
 const { randomEmote } = require('./js/custom-emotes/emotes.js');
+const { keepAlive } = require('./server.js');
 
 //  :statics:
 const client = new Client({ partials: ["MESSAGE", "CHANNEL", "REACTION", "USER"], intents: ["GUILD_VOICE_STATES", "GUILDS", "GUILD_MEMBERS", "GUILD_MESSAGES", "GUILD_MESSAGE_REACTIONS"] });
@@ -26,10 +27,6 @@ const knownAvailbilityChannels = ["op-availability", "dt-availability", "octane-
 
 //  runtime
 (() => {
-  
-  //  Login to MonkeBotV2
-  client.login(process.env.TOKEN);
-
   //  listen for bot online
   client.on("ready", () => {
 
@@ -75,20 +72,20 @@ const knownAvailbilityChannels = ["op-availability", "dt-availability", "octane-
 
   //  handle message reactions
   client.on("messageReactionAdd", async (reaction, user) => {
-    
+
     //  availability
     if (knownAvailbilityChannels.includes(reaction.message.channel.name)) {
       avavilabilityReactionsHandler(reaction, user)
     }
-    
+
     //  logging DT sign up
     const DTAvailabilitMessage = await getLatestDTAvailabilityMessageObject(client)
     const DTAvailabilityChannelID = await getDiscordChannelID(client, "dt-availability")
 
-    if (reaction.message.channel.id === DTAvailabilityChannelID && !user.bot){
-      if (reaction.message.id === DTAvailabilitMessage.id){
+    if (reaction.message.channel.id === DTAvailabilityChannelID && !user.bot) {
+      if (reaction.message.id === DTAvailabilitMessage.id) {
         await DTAvailabilityLogging(client, reaction, user, "reaction")
-      } else if (reaction.message.id != DTAvailabilitMessage.id){
+      } else if (reaction.message.id != DTAvailabilitMessage.id) {
         await DTAvailabilityLogging(client, reaction, user, "custom")
       }
     }
@@ -100,10 +97,10 @@ const knownAvailbilityChannels = ["op-availability", "dt-availability", "octane-
     const DTAvailabilitMessage = await getLatestDTAvailabilityMessageObject(client)
     const DTAvailabilityChannelID = await getDiscordChannelID(client, "dt-availability")
 
-    if (reaction.message.channel.id === DTAvailabilityChannelID && !user.bot){
-      if (reaction.message.id === DTAvailabilitMessage.id){
+    if (reaction.message.channel.id === DTAvailabilityChannelID && !user.bot) {
+      if (reaction.message.id === DTAvailabilitMessage.id) {
         await DTAvailabilityLogging(client, reaction, user, "remove_reaction")
-      } else if (reaction.message.id != DTAvailabilitMessage.id){
+      } else if (reaction.message.id != DTAvailabilitMessage.id) {
         await DTAvailabilityLogging(client, reaction, user, "remove_custom")
       }
     }
@@ -112,6 +109,9 @@ const knownAvailbilityChannels = ["op-availability", "dt-availability", "octane-
   client.on("messageDelete", async (message) => {
     logDeletedMessage(message, client, AuditLogEvent)
   })
+  
+  client.login(process.env.TOKEN);
+  keepAlive();
 })()
 
 
