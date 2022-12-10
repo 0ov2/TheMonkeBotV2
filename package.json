@@ -10,7 +10,7 @@
     "node-fetch": "^3.2.10",
     "node-schedule": "^2.1.0",
     "nodemon": "^2.0.19",
-    "puppeteer": "^16.1.0",
+    "puppeteer": "^16.2.0",
     "spacetime": "^7.1.4"
   }
 }

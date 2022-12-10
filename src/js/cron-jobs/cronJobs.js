@@ -12,34 +12,19 @@ const setUpAvailabilityCronJobs = (client) => {
 
   //  OP availability
   schedule.scheduleJob('0 18 * * 0', () => {
-
     OPAvailabilityMessage(client)
-
   })
 
   //  DT availability
-  schedule.scheduleJob('0 23 * * 0', () => {
-
+  schedule.scheduleJob('0 23 * * 0', () => { // '0 23 * * 0
     DTAvailabilityMessage(client)
-
-    //  TODO: logging
-
-  })
-
-  //  Octane availability
-  schedule.scheduleJob('0 23 * * 0', () => {
-
-    OctaneAvailabilityMessage(client)
-
   })
 }
 
-const matchAnnouncementCronJob = async (client, message, channel) => {
-  schedule.scheduleJob('0 9 * * *', () => {
-
-    sendMessageToChannel(client, channel, message)
-
-  })
-}
+// const matchAnnouncementCronJob = async (client, message, channel) => {
+//   schedule.scheduleJob('0 9 * * *', () => {
+//     sendMessageToChannel(client, channel, message)
+//   })
+// }
 
 module.exports = { setUpAvailabilityCronJobs, matchAnnouncementCronJob }

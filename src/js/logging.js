@@ -42,14 +42,42 @@ const logDeletedMessage = async (message, client) => {
     .catch(error => console.log(error))
     //  :TODO: better error handling
   
-  const executor = auditLogs.executor.username || "No executor found"
-  const deletedMessageAuthor = auditLogs.target.username || "No author found"
-  const channel = auditLogs.extra.channel.name !== null ? auditLogs.extra.channel.name :  "No channel found"
-  const messageContent = message.content || "No message content"
-  const attachments = []
+  // super safe 
+  let executor = "No executor found"
+  let deletedMessageAuthor = "No author found"
+  let channel = "No channel found"
+  let messageContent = "No message content"
+  let attachments = []
 
-  if (message.attachments){
-    message.attachments.map(attachment => attachments.push(attachment.url))
+  // audit logs
+  if (auditLogs){
+    if (auditLogs.target){
+      if (auditLogs.target.username){
+        deletedMessageAuthor = auditLogs.target.username;
+      }
+    }
+    if (auditLogs.executor){
+      if (auditLogs.executor.username){
+        executor = auditLogs.executor.username;
+      }
+    }
+    if (auditLogs.extra){
+      if (auditLogs.extra.channel){
+        if (auditLogs.extra.channel.name){
+          channel = auditLogs.extra.channel.name;
+        }
+      }
+    }
+  }
+
+  // message
+  if (message){
+    if (message.content){
+      messageContent = message.content;
+    }
+    if (message.attachments.length > 0){
+      message.attachments.map(attachment => attachments.push(attachment.url))
+    }
   }
 
   const deletedMessageEmebed = {

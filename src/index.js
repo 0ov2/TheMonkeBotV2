@@ -11,14 +11,13 @@ const { Client, EmbedBuilder } = require('discord.js');
 require('dotenv').config();
 
 //  :code:
-const { sendMessageToChannel, getDiscordChannelObject, getDiscordChannelID } = require("./js/helpers/channelHelpers.js")
-const { createMonkeCommandsbutton, createMoveOctaneButton, requestTeamStatsDropdown } = require("./js/buttons/monke-commands");
-const { handleSlowModeSelectMenuInteration, handleClearSlowModeInteraction, moveOctaneInteraction, getHistoricalMatchStatsInteraction } = require('./js/buttons/handler/button-interactions-handler.js');
+const { sendMessageToChannel, getDiscordChannelID } = require("./js/helpers/channelHelpers.js")
+const { createMonkeCommandsbutton, requestTeamStatsDropdown } = require("./js/buttons/monke-commands");
+const { handleSlowModeSelectMenuInteration, handleClearSlowModeInteraction, getHistoricalMatchStatsInteraction } = require('./js/buttons/handler/button-interactions-handler.js');
 const { setUpAvailabilityCronJobs } = require('./js/cron-jobs/cronJobs.js');
 const { avavilabilityReactionsHandler } = require('./js/helpers/reactionCountHelper.js');
 const { DTAvailabilityLogging, logDeletedMessage } = require('./js/logging.js');
 const { getLatestDTAvailabilityMessageObject } = require('./js/helpers/getMessageIdFromContent.js');
-const { fetchUpcomingMatches, oldPepleMatchAnnouncement } = require('./js/vrml-api/index.js');
 const { randomEmote } = require('./js/custom-emotes/emotes.js');
 
 //  :statics:
@@ -27,9 +26,9 @@ const knownAvailbilityChannels = ["op-availability", "dt-availability", "octane-
 
 //  runtime
 (() => {
-
+  
   //  Login to MonkeBotV2
-  client.login(process.env.TOKEN)
+  client.login(process.env.TOKEN);
 
   //  listen for bot online
   client.on("ready", () => {
@@ -38,15 +37,17 @@ const knownAvailbilityChannels = ["op-availability", "dt-availability", "octane-
     sendMessageToChannel(client, "monke-bot", `Monke Bot V2 Ready ${randomEmote()}`)
 
     //  Set up button commands in monke-commands channel
-    createMonkeCommandsbutton(client)
-    createMoveOctaneButton(client)
-    requestTeamStatsDropdown(client)
+    // createMonkeCommandsbutton(client)
+
+    //
+    //  content needs to be < 2000 in length, maybe split the content in half if length > 2000
+    // requestTeamStatsDropdown(client)
 
     //  Initialise CRON jobs
     setUpAvailabilityCronJobs(client)
 
     //  :TODO: set up cron job if OP match is today
-    oldPepleMatchAnnouncement(client)
+    // oldPepleMatchAnnouncement(client)
 
   })
 
@@ -63,10 +64,6 @@ const knownAvailbilityChannels = ["op-availability", "dt-availability", "octane-
 
     if (interaction.isButton() && interaction.customId === "clear-slow-mode") {
       handleClearSlowModeInteraction(client, interaction)
-    }
-
-    if (interaction.isButton() && interaction.customId === "move-octane") {
-      moveOctaneInteraction(client, interaction)
     }
 
     //  Match stats
@@ -88,7 +85,7 @@ const knownAvailbilityChannels = ["op-availability", "dt-availability", "octane-
     const DTAvailabilitMessage = await getLatestDTAvailabilityMessageObject(client)
     const DTAvailabilityChannelID = await getDiscordChannelID(client, "dt-availability")
 
-    if (reaction.message.channel.id === DTAvailabilityChannelID){
+    if (reaction.message.channel.id === DTAvailabilityChannelID && !user.bot){
       if (reaction.message.id === DTAvailabilitMessage.id){
         await DTAvailabilityLogging(client, reaction, user, "reaction")
       } else if (reaction.message.id != DTAvailabilitMessage.id){
@@ -103,7 +100,7 @@ const knownAvailbilityChannels = ["op-availability", "dt-availability", "octane-
     const DTAvailabilitMessage = await getLatestDTAvailabilityMessageObject(client)
     const DTAvailabilityChannelID = await getDiscordChannelID(client, "dt-availability")
 
-    if (reaction.message.channel.id === DTAvailabilityChannelID){
+    if (reaction.message.channel.id === DTAvailabilityChannelID && !user.bot){
       if (reaction.message.id === DTAvailabilitMessage.id){
         await DTAvailabilityLogging(client, reaction, user, "remove_reaction")
       } else if (reaction.message.id != DTAvailabilitMessage.id){
