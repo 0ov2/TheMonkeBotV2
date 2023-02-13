@@ -2,7 +2,7 @@
 //  :code:
 const { getDiscordChannelObject, getListOfServerChannels } = require("../../helpers/channelHelpers")
 const { formatHistoricalMapStats } = require("../../helpers/messageFormatting")
-const { getHistoricalMatchStatsforSpecificTeam, getSpecifcTeamID } = require("../../vrml-api")
+const { getHistoricalMatchStatsforSpecificTeam, getSpecifcTeamID } = require("../../apis")
 
 
 const handleSlowModeSelectMenuInteration = (client, interaction) => {

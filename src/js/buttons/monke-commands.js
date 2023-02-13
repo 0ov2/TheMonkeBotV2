@@ -5,7 +5,7 @@ const { MessageActionRow, MessageButton, MessageEmbed, MessageSelectMenu } = req
 
 //  :code:
 const { getDiscordChannelObject, getListOfServerChannels } = require("../helpers/channelHelpers");
-const { getCurrentListOfVrmlTeams } = require('../vrml-api');
+const { getCurrentListOfVrmlTeams } = require('../apis');
 
 
 const createMonkeCommandsbutton = async (client) => {

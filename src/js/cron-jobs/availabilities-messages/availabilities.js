@@ -21,7 +21,7 @@ const OPAvailabilityMessage = async (client) => {
     }
 
     //  :step 2:
-    //  build and send the availability message with local time syntax 
+    //  build and send the availability message with local time syntax <t: :t> 
     await OPChannelObject.send("<@&" + OPRolesObject + ">\n" +
     `A - ${epochArray[0].day} <t:${epochArray[0].epoch}:t> \n` +
     `B - ${epochArray[1].day} <t:${epochArray[1].epoch}:t> \n` +
