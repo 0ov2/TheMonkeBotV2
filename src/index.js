@@ -54,10 +54,11 @@ client.on("ready", () => {
 
 client.on('message', async (message) => {
 	if (message.content.startsWith('!ask')) {
+		const devID = "259466508814516224";
 		const userId = message.author.id;
 		const currentTime = Date.now();
 
-		if (userCommandHistory.has(userId)) {
+		if (userCommandHistory.has(userId) && userId !== devID) {
 			const lastCommandTime = userCommandHistory.get(userId);
 			console.log(userCommandHistory);
 			if (currentTime - lastCommandTime < commandInterval) {
@@ -70,14 +71,17 @@ client.on('message', async (message) => {
 
 		const question = message.content.slice(5);
 		if (!question) {
-			message.reply("Error: No question provided.");
+			message.reply("Did you miss-click the 'ENTER' key?");
 			return;
 		}
 
-		getOpenAIAnswer(question)
-			.then((answer) => {
-				message.reply(answer);
-			});
+		try {
+			const answer = await getOpenAIAnswer(question, process.env.OPENAI_API_KEY);
+			message.reply(answer);
+		} catch (error) {
+			console.error(`Error getting answer from OpenAI: ${error.message}`);
+			message.reply(`You broke Monke, how dare you. <@${devID}> Check logs`);
+		}
 	}
 
 });
