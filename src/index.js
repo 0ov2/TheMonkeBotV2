@@ -145,7 +145,7 @@ client.on("messageReactionRemove", async (reaction, user) => {
 })
 
 client.on("messageDelete", async (message) => {
-	logDeletedMessage(message, client, AuditLogEvent)
+	logDeletedMessage(message, client)
 })
 
 client.login(process.env.TOKEN);
